@@ -1,0 +1,441 @@
+apiVersion: unfurl/v1alpha1
+kind: CloudMap
+repositories:
+  unfurl.cloud/onecommons/blueprints/baserow:
+    git: unfurl.cloud/onecommons/blueprints/baserow.git
+    path: onecommons/blueprints/baserow
+    name: Baserow
+    protocols:
+    - https
+    - ssh
+    internal_id: '93'
+    project_url: https://unfurl.cloud/onecommons/blueprints/baserow
+    metadata:
+      description: Baserow is an open source no-code database and Airtable alternative
+        that enables users without technical experience to create their own online
+        database.
+      issues_url: https://unfurl.cloud/onecommons/blueprints/baserow/-/issues
+      homepage_url: https://unfurl.cloud/onecommons/blueprints/baserow
+      avatar_url: https://unfurl.cloud/uploads/-/system/project/avatar/93/avatar.png
+    default_branch: main
+    branches:
+      main: 0623930aa69912ce64becc3089a2fae40d9a8832
+  unfurl.cloud/onecommons/blueprints/cachet:
+    git: unfurl.cloud/onecommons/blueprints/cachet.git
+    path: onecommons/blueprints/cachet
+    name: Cachet
+    protocols:
+    - https
+    - ssh
+    internal_id: '505'
+    project_url: https://unfurl.cloud/onecommons/blueprints/cachet
+    metadata:
+      description: An open source status page system for everyone.
+      issues_url: https://unfurl.cloud/onecommons/blueprints/cachet/-/issues
+      homepage_url: https://unfurl.cloud/onecommons/blueprints/cachet
+      avatar_url: https://unfurl.cloud/onecommons/blueprints/cachet/-/avatar
+    default_branch: main
+    branches:
+      main: 9a434b4d251f75070521be8ba1b7006d94689a3e
+  unfurl.cloud/onecommons/blueprints/container-webapp:
+    git: unfurl.cloud/onecommons/blueprints/container-webapp.git
+    path: onecommons/blueprints/container-webapp
+    name: Container Webapp
+    protocols:
+    - https
+    - ssh
+    internal_id: '274'
+    project_url: https://unfurl.cloud/onecommons/blueprints/container-webapp
+    metadata:
+      issues_url: https://unfurl.cloud/onecommons/blueprints/container-webapp/-/issues
+      homepage_url: https://unfurl.cloud/onecommons/blueprints/container-webapp
+    default_branch: main
+    branches:
+      main: 40ab0d91451ca92313c1c1abd480fb3e29b8bf79
+      mar31a: 40ab0d91451ca92313c1c1abd480fb3e29b8bf79
+  unfurl.cloud/onecommons/blueprints/cronicle:
+    git: unfurl.cloud/onecommons/blueprints/cronicle.git
+    path: onecommons/blueprints/cronicle
+    name: Cronicle
+    protocols:
+    - https
+    - ssh
+    internal_id: '504'
+    project_url: https://unfurl.cloud/onecommons/blueprints/cronicle
+    metadata:
+      description: A simple, distributed task scheduler and runner with a web based
+        UI.
+      issues_url: https://unfurl.cloud/onecommons/blueprints/cronicle/-/issues
+      homepage_url: https://unfurl.cloud/onecommons/blueprints/cronicle
+      avatar_url: https://unfurl.cloud/onecommons/blueprints/cronicle/-/avatar
+    default_branch: main
+    branches:
+      main: 7cd06ba9e789ac24c361c90c659a530c72337034
+  unfurl.cloud/onecommons/blueprints/discourse:
+    git: unfurl.cloud/onecommons/blueprints/discourse.git
+    path: onecommons/blueprints/discourse
+    name: Discourse
+    protocols:
+    - https
+    - ssh
+    internal_id: '34'
+    project_url: https://unfurl.cloud/onecommons/blueprints/discourse
+    metadata:
+      description: "Discourse is the 100% open source discussion platform built for\
+        \ the next decade of the internet. Use it as a mailing list, discussion forum,\
+        \ long-form chat room, and more!\r\n"
+      issues_url: https://unfurl.cloud/onecommons/blueprints/discourse/-/issues
+      homepage_url: https://unfurl.cloud/onecommons/blueprints/discourse
+      avatar_url: https://unfurl.cloud/uploads/-/system/project/avatar/34/discourse.png
+    default_branch: main
+    branches:
+      main: e5f87a10ce92ca7fcc4ba432a17df86ea7ef0d1c
+  unfurl.cloud/onecommons/blueprints/drupal:
+    git: unfurl.cloud/onecommons/blueprints/drupal.git
+    path: onecommons/blueprints/drupal
+    name: Drupal
+    protocols:
+    - https
+    - ssh
+    internal_id: '38'
+    project_url: https://unfurl.cloud/onecommons/blueprints/drupal
+    metadata:
+      description: Drupal is a free and open-source web content management system
+        written in PHP and distributed under the GNU General Public License.
+      issues_url: https://unfurl.cloud/onecommons/blueprints/drupal/-/issues
+      homepage_url: https://unfurl.cloud/onecommons/blueprints/drupal
+      avatar_url: https://unfurl.cloud/uploads/-/system/project/avatar/38/avatar.png
+    default_branch: main
+    branches:
+      main: 615b38dea645774cd2d5490e1ccfec551d0b1805
+  unfurl.cloud/onecommons/blueprints/etherpad:
+    git: unfurl.cloud/onecommons/blueprints/etherpad.git
+    path: onecommons/blueprints/etherpad
+    name: Etherpad
+    protocols:
+    - https
+    - ssh
+    internal_id: '506'
+    project_url: https://unfurl.cloud/onecommons/blueprints/etherpad
+    metadata:
+      description: Etherpad is a real-time collaborative editor for the web
+      issues_url: https://unfurl.cloud/onecommons/blueprints/etherpad/-/issues
+      homepage_url: https://unfurl.cloud/onecommons/blueprints/etherpad
+      avatar_url: https://unfurl.cloud/onecommons/blueprints/etherpad/-/avatar
+    default_branch: main
+    branches:
+      main: 74d7039838d40dff9614f05edf8ece2cebe6c4a5
+  unfurl.cloud/onecommons/blueprints/ghost:
+    git: unfurl.cloud/onecommons/blueprints/ghost.git
+    path: onecommons/blueprints/ghost
+    name: Ghost
+    protocols:
+    - https
+    - ssh
+    internal_id: '40'
+    project_url: https://unfurl.cloud/onecommons/blueprints/ghost
+    metadata:
+      description: Ghost is a free and open source blogging platform written in JavaScript
+        and distributed under the MIT License, designed to simplify the process of
+        online publishing for individual bloggers as well as online publications.
+      issues_url: https://unfurl.cloud/onecommons/blueprints/ghost/-/issues
+      homepage_url: https://unfurl.cloud/onecommons/blueprints/ghost
+      avatar_url: https://unfurl.cloud/uploads/-/system/project/avatar/40/avatar.png
+    default_branch: main
+    branches:
+      jg-changes: 830664742e265e0765325ad2f4521d71be39f84f
+      main: 80408af2b50ee0fc2fa09532589c9d6a0fb27677
+  unfurl.cloud/onecommons/blueprints/gogs:
+    git: unfurl.cloud/onecommons/blueprints/gogs.git
+    path: onecommons/blueprints/gogs
+    name: Gogs
+    protocols:
+    - https
+    - ssh
+    internal_id: '96'
+    project_url: https://unfurl.cloud/onecommons/blueprints/gogs
+    metadata:
+      description: Gogs is a painless self-hosted Git service. This project aims to
+        build a simple, stable and extensible self-hosted Git service that can be
+        setup in the most painless way.
+      issues_url: https://unfurl.cloud/onecommons/blueprints/gogs/-/issues
+      homepage_url: https://unfurl.cloud/onecommons/blueprints/gogs
+      avatar_url: https://unfurl.cloud/uploads/-/system/project/avatar/96/avatar.png
+    default_branch: main
+    branches:
+      main: 149791560fb97a8ff7d492107b4b50ee97461a63
+  unfurl.cloud/onecommons/blueprints/kubernetes-chores:
+    git: unfurl.cloud/onecommons/blueprints/kubernetes-chores.git
+    path: onecommons/blueprints/kubernetes-chores
+    name: kubernetes-chores
+    protocols:
+    - https
+    - ssh
+    internal_id: '236'
+    project_url: https://unfurl.cloud/onecommons/blueprints/kubernetes-chores
+    metadata:
+      issues_url: https://unfurl.cloud/onecommons/blueprints/kubernetes-chores/-/issues
+      homepage_url: https://unfurl.cloud/onecommons/blueprints/kubernetes-chores
+    default_branch: main
+    branches:
+      main: 7f20fa78fc87fa0d716f49392fa45cdf7a936c40
+  unfurl.cloud/onecommons/blueprints/magento:
+    git: unfurl.cloud/onecommons/blueprints/magento.git
+    path: onecommons/blueprints/magento
+    name: Magento
+    protocols:
+    - https
+    - ssh
+    internal_id: '39'
+    project_url: https://unfurl.cloud/onecommons/blueprints/magento
+    metadata:
+      description: Magento is an open-source e-commerce platform written in PHP. It
+        uses multiple other PHP frameworks such as Laminas and Symfony. Magento source
+        code is distributed under Open Software License v3.0.
+      issues_url: https://unfurl.cloud/onecommons/blueprints/magento/-/issues
+      homepage_url: https://unfurl.cloud/onecommons/blueprints/magento
+      avatar_url: https://unfurl.cloud/uploads/-/system/project/avatar/39/avatar.png
+    default_branch: main
+    branches:
+      main: 408782b71206e7d8e848ab4f3923ffeb46435e70
+  unfurl.cloud/onecommons/blueprints/mattermost-entreprise-edition-e0:
+    git: unfurl.cloud/onecommons/blueprints/mattermost-entreprise-edition-e0.git
+    path: onecommons/blueprints/mattermost-entreprise-edition-e0
+    name: Mattermost Entreprise Edition E0
+    protocols:
+    - https
+    - ssh
+    internal_id: '503'
+    project_url: https://unfurl.cloud/onecommons/blueprints/mattermost-entreprise-edition-e0
+    metadata:
+      description: Mattermost Team Edition open source collaboration/chat software
+      issues_url: https://unfurl.cloud/onecommons/blueprints/mattermost-entreprise-edition-e0/-/issues
+      homepage_url: https://unfurl.cloud/onecommons/blueprints/mattermost-entreprise-edition-e0
+      avatar_url: https://unfurl.cloud/onecommons/blueprints/mattermost-entreprise-edition-e0/-/avatar
+    default_branch: main
+    branches:
+      main: a62380555f443c75f2652c90862591f976087953
+  unfurl.cloud/onecommons/blueprints/mediawiki:
+    git: unfurl.cloud/onecommons/blueprints/mediawiki.git
+    path: onecommons/blueprints/mediawiki
+    name: MediaWiki
+    protocols:
+    - https
+    - ssh
+    internal_id: '35'
+    project_url: https://unfurl.cloud/onecommons/blueprints/mediawiki
+    metadata:
+      description: MediaWiki is free and open-source wiki software used in Wikipedia,
+        Wiktionary, and many other online encyclopedias.
+      issues_url: https://unfurl.cloud/onecommons/blueprints/mediawiki/-/issues
+      homepage_url: https://unfurl.cloud/onecommons/blueprints/mediawiki
+      avatar_url: https://unfurl.cloud/uploads/-/system/project/avatar/35/avatar.png
+    default_branch: main
+    branches:
+      main: 1c83db246a8d25b75963169c72f6464c9485fd0f
+  unfurl.cloud/onecommons/blueprints/memos:
+    git: unfurl.cloud/onecommons/blueprints/memos.git
+    path: onecommons/blueprints/memos
+    name: Memos
+    protocols:
+    - https
+    - ssh
+    internal_id: '507'
+    project_url: https://unfurl.cloud/onecommons/blueprints/memos
+    metadata:
+      description: "An open-source, self-hosted memo hub with knowledge management\
+        \ and socialization.\r\n"
+      issues_url: https://unfurl.cloud/onecommons/blueprints/memos/-/issues
+      homepage_url: https://unfurl.cloud/onecommons/blueprints/memos
+      avatar_url: https://unfurl.cloud/onecommons/blueprints/memos/-/avatar
+    default_branch: main
+    branches:
+      main: 05adaf41f9ecc3b928dcd8dc147a39ad9545baeb
+  unfurl.cloud/onecommons/blueprints/minecraft:
+    git: unfurl.cloud/onecommons/blueprints/minecraft.git
+    path: onecommons/blueprints/minecraft
+    name: Minecraft
+    protocols:
+    - https
+    - ssh
+    internal_id: '32'
+    project_url: https://unfurl.cloud/onecommons/blueprints/minecraft
+    metadata:
+      description: A Minecraft Server that will automatically download the latest
+        stable version at startup.
+      issues_url: https://unfurl.cloud/onecommons/blueprints/minecraft/-/issues
+      homepage_url: https://unfurl.cloud/onecommons/blueprints/minecraft
+      avatar_url: https://unfurl.cloud/uploads/-/system/project/avatar/32/avatar.png
+    default_branch: main
+    branches:
+      main: 28d07b29154e2f2fc7f6eaea290bb2180670629a
+  unfurl.cloud/onecommons/blueprints/mod9:
+    git: unfurl.cloud/onecommons/blueprints/mod9.git
+    path: onecommons/blueprints/mod9
+    name: Mod9 ASR Engine
+    protocols:
+    - https
+    - ssh
+    internal_id: '95'
+    project_url: https://unfurl.cloud/onecommons/blueprints/mod9
+    metadata:
+      description: The Mod9 ASR Engine consists of a Linux server, along with compatible
+        models and support software, that enables clients to send commands and audio
+        over a network and receive the written transcript of what was said in the
+        audio.
+      issues_url: https://unfurl.cloud/onecommons/blueprints/mod9/-/issues
+      homepage_url: https://unfurl.cloud/onecommons/blueprints/mod9
+      avatar_url: https://unfurl.cloud/uploads/-/system/project/avatar/95/avatar.png
+    default_branch: main
+    branches:
+      main: 6019182ed56946646ec30073464b30e6cc4fd36d
+  unfurl.cloud/onecommons/blueprints/nextcloud:
+    git: unfurl.cloud/onecommons/blueprints/nextcloud.git
+    path: onecommons/blueprints/nextcloud
+    name: Nextcloud
+    protocols:
+    - https
+    - ssh
+    internal_id: '111'
+    project_url: https://unfurl.cloud/onecommons/blueprints/nextcloud
+    metadata:
+      description: A safe home for all your data. Access & share your files, calendars,
+        contacts, mail & more from any device, on your terms.
+      issues_url: https://unfurl.cloud/onecommons/blueprints/nextcloud/-/issues
+      homepage_url: https://unfurl.cloud/onecommons/blueprints/nextcloud
+      avatar_url: https://unfurl.cloud/uploads/-/system/project/avatar/111/avatar.png
+    default_branch: main
+    branches:
+      main: 76a4c27bfcbff933b931ec7e4bac7d5baecdbccb
+  unfurl.cloud/onecommons/blueprints/nginx:
+    git: unfurl.cloud/onecommons/blueprints/nginx.git
+    path: onecommons/blueprints/nginx
+    name: NGINX
+    protocols:
+    - https
+    - ssh
+    internal_id: '44'
+    project_url: https://unfurl.cloud/onecommons/blueprints/nginx
+    metadata:
+      description: NGINX Open Source is a web server that can be also used as a reverse
+        proxy, load balancer, and HTTP cache. Recommended for high-demanding sites
+        due to its ability to provide faster content.
+      issues_url: https://unfurl.cloud/onecommons/blueprints/nginx/-/issues
+      homepage_url: https://unfurl.cloud/onecommons/blueprints/nginx
+      avatar_url: https://unfurl.cloud/uploads/-/system/project/avatar/44/nginx-avatar.png
+    default_branch: main
+    branches:
+      main: 0f4181777531d9e66b08577a0660953e8be581c7
+  unfurl.cloud/onecommons/blueprints/odoo:
+    git: unfurl.cloud/onecommons/blueprints/odoo.git
+    path: onecommons/blueprints/odoo
+    name: Odoo
+    protocols:
+    - https
+    - ssh
+    internal_id: '37'
+    project_url: https://unfurl.cloud/onecommons/blueprints/odoo
+    metadata:
+      description: Odoo is a suite of business management software tools including
+        CRM, e-commerce, billing, accounting, manufacturing, warehouse, project management,
+        and inventory management. The Community version is a libre software, licensed
+        under the GNU LGPLv3.
+      issues_url: https://unfurl.cloud/onecommons/blueprints/odoo/-/issues
+      homepage_url: https://unfurl.cloud/onecommons/blueprints/odoo
+      avatar_url: https://unfurl.cloud/uploads/-/system/project/avatar/37/avatar.png
+    default_branch: main
+    branches:
+      main: 0c71348a66411c50a6951ed08f7b07a61169feab
+  unfurl.cloud/onecommons/blueprints/openvscode-server:
+    git: unfurl.cloud/onecommons/blueprints/openvscode-server.git
+    path: onecommons/blueprints/openvscode-server
+    name: OpenVSCode Server
+    protocols:
+    - https
+    - ssh
+    internal_id: '502'
+    project_url: https://unfurl.cloud/onecommons/blueprints/openvscode-server
+    metadata:
+      description: "A version of VS Code that runs a server on a remote machine and\
+        \ allows access through a modern web browser.\r\n"
+      issues_url: https://unfurl.cloud/onecommons/blueprints/openvscode-server/-/issues
+      homepage_url: https://unfurl.cloud/onecommons/blueprints/openvscode-server
+      avatar_url: https://unfurl.cloud/onecommons/blueprints/openvscode-server/-/avatar
+    default_branch: main
+    branches:
+      main: 9e9e7512d8bcccd60ff70f20c6b5cc4e7064e9b4
+  unfurl.cloud/onecommons/blueprints/unfurl-server:
+    git: unfurl.cloud/onecommons/blueprints/unfurl-server.git
+    path: onecommons/blueprints/unfurl-server
+    name: unfurl-server
+    protocols:
+    - https
+    - ssh
+    internal_id: '416'
+    project_url: https://unfurl.cloud/onecommons/blueprints/unfurl-server
+    metadata:
+      issues_url: https://unfurl.cloud/onecommons/blueprints/unfurl-server/-/issues
+      homepage_url: https://unfurl.cloud/onecommons/blueprints/unfurl-server
+    private: true
+    default_branch: main
+    branches:
+      main: 041ff52e275da84cc5e5f055448a3d69206d7aa8
+  unfurl.cloud/onecommons/blueprints/wireguard:
+    git: unfurl.cloud/onecommons/blueprints/wireguard.git
+    path: onecommons/blueprints/wireguard
+    name: WireGuard
+    protocols:
+    - https
+    - ssh
+    internal_id: '33'
+    project_url: https://unfurl.cloud/onecommons/blueprints/wireguard
+    metadata:
+      description: WireGuard is a communication protocol and free and open-source
+        software that implements encrypted virtual private networks.
+      issues_url: https://unfurl.cloud/onecommons/blueprints/wireguard/-/issues
+      homepage_url: https://unfurl.cloud/onecommons/blueprints/wireguard
+      avatar_url: https://unfurl.cloud/uploads/-/system/project/avatar/33/avatar.png
+    default_branch: main
+    branches:
+      main: cb17d2e38802f9fedf71472ac3cb3bf46d2fbfe1
+      primary-deployment-blueprint: ecafbe75f5376f9eb0a97f545bc9df0efe27f88f
+  unfurl.cloud/onecommons/blueprints/wordpress:
+    git: unfurl.cloud/onecommons/blueprints/wordpress.git
+    path: onecommons/blueprints/wordpress
+    name: WordPress
+    protocols:
+    - https
+    - ssh
+    internal_id: '36'
+    project_url: https://unfurl.cloud/onecommons/blueprints/wordpress
+    metadata:
+      description: WordPress is a open-source content-management system written in
+        PHP, commonly used to create websites and blogs. WordPress is extremely customizable,
+        with a large community of plugins and themes to design your site just the
+        way you want it!
+      issues_url: https://unfurl.cloud/onecommons/blueprints/wordpress/-/issues
+      homepage_url: https://unfurl.cloud/onecommons/blueprints/wordpress
+      avatar_url: https://unfurl.cloud/uploads/-/system/project/avatar/36/avatar.png
+    default_branch: main
+    branches:
+      jg-changes: ecae7112fbb6fc1b9902b1116081a0a4aeeea5ab
+      main: 5e1566b8d4fa494b96f4b062eaa2efb656dae4e8
+  unfurl.cloud/onecommons/blueprints/zulip:
+    git: unfurl.cloud/onecommons/blueprints/zulip.git
+    path: onecommons/blueprints/zulip
+    name: Zulip
+    protocols:
+    - https
+    - ssh
+    internal_id: '94'
+    project_url: https://unfurl.cloud/onecommons/blueprints/zulip
+    metadata:
+      description: Zulip is an open-source team collaboration tool with unique topic-based
+        threading that combines the best of email and chat to make remote work productive
+        and delightful.
+      issues_url: https://unfurl.cloud/onecommons/blueprints/zulip/-/issues
+      homepage_url: https://unfurl.cloud/onecommons/blueprints/zulip
+      avatar_url: https://unfurl.cloud/uploads/-/system/project/avatar/94/avatar.png
+    default_branch: main
+    branches:
+      main: 7a080e8fc677e618230c6631fe8df334382488a2

@@ -1,60 +1,6 @@
 apiVersion: unfurl/v1alpha1
 kind: CloudMap
 repositories:
-  gitlab.com/onecommons/blueprints/ghost:
-    git: gitlab.com/onecommons/blueprints/ghost.git
-    path: ghost
-    initial_revision: 6993d63c774a70f72a7ea9bf987451bc8a685b7d
-    protocols:
-    - ssh
-    metadata: {}
-    branches:
-      ghost-updates: dffdf51933d810072e51560331bd12eb290844a1
-      jg-changes: 39217236ab9e6f1d8bc13c77735d889de24c35f1
-      main: a04228e9cc6de2d9f39638f270a96657ae705e6c
-      official-image: 74cccf685e67196ae38b5f733745a53eb38f9765
-      reexport: 5a91d5624144388b3ea145966a241b852609620f
-      test: a9f376f316b654e3db2aa4830719460da292d03e
-  gitlab.com/onecommons/blueprints/mediawiki:
-    git: gitlab.com/onecommons/blueprints/mediawiki
-    path: mediawiki
-    initial_revision: 6993d63c774a70f72a7ea9bf987451bc8a685b7d
-    protocols:
-    - ssh
-    metadata: {}
-    branches:
-      cloud-databases: d9892134106ef002ab4a1d56edfe88a699f3ee5c
-      main: 1c83db246a8d25b75963169c72f6464c9485fd0f
-  gitlab.com/onecommons/blueprints/minecraft:
-    git: gitlab.com/onecommons/blueprints/minecraft
-    path: minecraft
-    initial_revision: 36277d618a0f9f02ef7e4ed6f40f85e11bf3e3f0
-    protocols:
-    - ssh
-    metadata: {}
-    branches:
-      main: 28d07b29154e2f2fc7f6eaea290bb2180670629a
-      primary-deployment-blueprint: fb500764837ee6106836b773b5dc9575c64fd920
-  gitlab.com/onecommons/blueprints/mod9:
-    git: gitlab.com/onecommons/blueprints/mod9.git
-    path: mod9
-    initial_revision: 8bc6430445fa38893b51c5e4a4df29177df58cdf
-    protocols:
-    - ssh
-    metadata: {}
-    branches:
-      main: 6019182ed56946646ec30073464b30e6cc4fd36d
-      mod9: b4621c0bf1fbae81d3bbf330720aa54dda195a90
-  gitlab.com/onecommons/blueprints/wordpress:
-    git: gitlab.com/onecommons/blueprints/wordpress
-    path: wordpress
-    initial_revision: 6993d63c774a70f72a7ea9bf987451bc8a685b7d
-    protocols:
-    - ssh
-    metadata: {}
-    branches:
-      main: 5e1566b8d4fa494b96f4b062eaa2efb656dae4e8
-      rds-grant-fix: 2d482041555e2f4469e8d1acc884e4c89c93529c
   unfurl.cloud/onecommons/blueprints/baserow:
     git: unfurl.cloud/onecommons/blueprints/baserow.git
     path: onecommons/blueprints/baserow

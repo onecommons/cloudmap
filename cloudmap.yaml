@@ -1,6 +1,60 @@
 apiVersion: unfurl/v1alpha1
 kind: CloudMap
 repositories:
+  gitlab.com/onecommons/blueprints/ghost:
+    git: gitlab.com/onecommons/blueprints/ghost.git
+    path: ghost
+    initial_revision: 6993d63c774a70f72a7ea9bf987451bc8a685b7d
+    protocols:
+    - ssh
+    metadata: {}
+    branches:
+      ghost-updates: dffdf51933d810072e51560331bd12eb290844a1
+      jg-changes: 39217236ab9e6f1d8bc13c77735d889de24c35f1
+      main: a04228e9cc6de2d9f39638f270a96657ae705e6c
+      official-image: 74cccf685e67196ae38b5f733745a53eb38f9765
+      reexport: 5a91d5624144388b3ea145966a241b852609620f
+      test: a9f376f316b654e3db2aa4830719460da292d03e
+  gitlab.com/onecommons/blueprints/mediawiki:
+    git: gitlab.com/onecommons/blueprints/mediawiki
+    path: mediawiki
+    initial_revision: 6993d63c774a70f72a7ea9bf987451bc8a685b7d
+    protocols:
+    - ssh
+    metadata: {}
+    branches:
+      cloud-databases: d9892134106ef002ab4a1d56edfe88a699f3ee5c
+      main: 1c83db246a8d25b75963169c72f6464c9485fd0f
+  gitlab.com/onecommons/blueprints/minecraft:
+    git: gitlab.com/onecommons/blueprints/minecraft
+    path: minecraft
+    initial_revision: 36277d618a0f9f02ef7e4ed6f40f85e11bf3e3f0
+    protocols:
+    - ssh
+    metadata: {}
+    branches:
+      main: 28d07b29154e2f2fc7f6eaea290bb2180670629a
+      primary-deployment-blueprint: fb500764837ee6106836b773b5dc9575c64fd920
+  gitlab.com/onecommons/blueprints/mod9:
+    git: gitlab.com/onecommons/blueprints/mod9.git
+    path: mod9
+    initial_revision: 8bc6430445fa38893b51c5e4a4df29177df58cdf
+    protocols:
+    - ssh
+    metadata: {}
+    branches:
+      main: 6019182ed56946646ec30073464b30e6cc4fd36d
+      mod9: b4621c0bf1fbae81d3bbf330720aa54dda195a90
+  gitlab.com/onecommons/blueprints/wordpress:
+    git: gitlab.com/onecommons/blueprints/wordpress
+    path: wordpress
+    initial_revision: 6993d63c774a70f72a7ea9bf987451bc8a685b7d
+    protocols:
+    - ssh
+    metadata: {}
+    branches:
+      main: 5e1566b8d4fa494b96f4b062eaa2efb656dae4e8
+      rds-grant-fix: 2d482041555e2f4469e8d1acc884e4c89c93529c
   unfurl.cloud/onecommons/blueprints/baserow:
     git: unfurl.cloud/onecommons/blueprints/baserow.git
     path: onecommons/blueprints/baserow
@@ -20,6 +74,9 @@ repositories:
     default_branch: main
     branches:
       main: 0623930aa69912ce64becc3089a2fae40d9a8832
+    notable:
+      unfurl.yaml:
+        artifact_type: artifact.tosca.UnfurlProject
   unfurl.cloud/onecommons/blueprints/cachet:
     git: unfurl.cloud/onecommons/blueprints/cachet.git
     path: onecommons/blueprints/cachet
@@ -37,6 +94,18 @@ repositories:
     default_branch: main
     branches:
       main: 9a434b4d251f75070521be8ba1b7006d94689a3e
+    notable:
+      ensemble-template.yaml:
+        artifact_type: artifact.tosca.ServiceTemplate
+        name: Cachet
+        version: '0.1'
+        description: An open source status page system for everyone.
+        schema: https://unfurl.cloud/onecommons/unfurl-types.git#v0.4.0
+        type: CachetApp
+        dependencies:
+        - PostgresDB
+        artifacts:
+        - docker.io/cachethq/docker
   unfurl.cloud/onecommons/blueprints/container-webapp:
     git: unfurl.cloud/onecommons/blueprints/container-webapp.git
     path: onecommons/blueprints/container-webapp
@@ -53,6 +122,13 @@ repositories:
     branches:
       main: 40ab0d91451ca92313c1c1abd480fb3e29b8bf79
       mar31a: 40ab0d91451ca92313c1c1abd480fb3e29b8bf79
+    notable:
+      ensemble-template.yaml:
+        artifact_type: artifact.tosca.ServiceTemplate
+        name: Container Webapp
+        version: 0.1
+        schema: https://gitlab.com/onecommons/unfurl-types#v0.6.1
+        type: GenericContainerApp
   unfurl.cloud/onecommons/blueprints/cronicle:
     git: unfurl.cloud/onecommons/blueprints/cronicle.git
     path: onecommons/blueprints/cronicle
@@ -71,6 +147,17 @@ repositories:
     default_branch: main
     branches:
       main: 7cd06ba9e789ac24c361c90c659a530c72337034
+    notable:
+      ensemble-template.yaml:
+        artifact_type: artifact.tosca.ServiceTemplate
+        name: Cronicle
+        version: '0.1'
+        description: A simple, distributed task scheduler and runner with a web based
+          UI.
+        schema: https://unfurl.cloud/onecommons/unfurl-types.git#v0.4.0
+        type: CronicleApp
+        artifacts:
+        - docker.io/soulteary/cronicle
   unfurl.cloud/onecommons/blueprints/discourse:
     git: unfurl.cloud/onecommons/blueprints/discourse.git
     path: onecommons/blueprints/discourse
@@ -90,6 +177,21 @@ repositories:
     default_branch: main
     branches:
       main: e5f87a10ce92ca7fcc4ba432a17df86ea7ef0d1c
+    notable:
+      ensemble-template.yaml:
+        artifact_type: artifact.tosca.ServiceTemplate
+        name: Discourse
+        version: '0.1'
+        description: Discourse is the 100% open source discussion platform built for
+          the next decade of the Internet. Use it as a mailing list, discussion forum,
+          long-form chat room, and more!
+        schema: https://unfurl.cloud/onecommons/unfurl-types.git#v0.4.0
+        type: DiscourseApp
+        dependencies:
+        - PostgresDB
+        - Redis
+        artifacts:
+        - docker.io/docker.io/bitnami/discourse
   unfurl.cloud/onecommons/blueprints/drupal:
     git: unfurl.cloud/onecommons/blueprints/drupal.git
     path: onecommons/blueprints/drupal
@@ -108,6 +210,9 @@ repositories:
     default_branch: main
     branches:
       main: 615b38dea645774cd2d5490e1ccfec551d0b1805
+    notable:
+      unfurl.yaml:
+        artifact_type: artifact.tosca.UnfurlProject
   unfurl.cloud/onecommons/blueprints/etherpad:
     git: unfurl.cloud/onecommons/blueprints/etherpad.git
     path: onecommons/blueprints/etherpad
@@ -125,6 +230,18 @@ repositories:
     default_branch: main
     branches:
       main: 74d7039838d40dff9614f05edf8ece2cebe6c4a5
+    notable:
+      ensemble-template.yaml:
+        artifact_type: artifact.tosca.ServiceTemplate
+        name: Etherpad
+        version: '0.1'
+        description: Etherpad is a real-time collaborative editor for the web
+        schema: https://unfurl.cloud/onecommons/unfurl-types.git#v0.4.0
+        type: EtherpadApp
+        dependencies:
+        - MySQLDB
+        artifacts:
+        - docker.io/etherpad/etherpad
   unfurl.cloud/onecommons/blueprints/ghost:
     git: unfurl.cloud/onecommons/blueprints/ghost.git
     path: onecommons/blueprints/ghost
@@ -145,6 +262,9 @@ repositories:
     branches:
       jg-changes: 830664742e265e0765325ad2f4521d71be39f84f
       main: 80408af2b50ee0fc2fa09532589c9d6a0fb27677
+    notable:
+      unfurl.yaml:
+        artifact_type: artifact.tosca.UnfurlProject
   unfurl.cloud/onecommons/blueprints/gogs:
     git: unfurl.cloud/onecommons/blueprints/gogs.git
     path: onecommons/blueprints/gogs
@@ -164,6 +284,20 @@ repositories:
     default_branch: main
     branches:
       main: 149791560fb97a8ff7d492107b4b50ee97461a63
+    notable:
+      ensemble-template.yaml:
+        artifact_type: artifact.tosca.ServiceTemplate
+        name: Gogs
+        version: 0.1
+        description: "Gogs is a simple, stable, and extensible self-hosted Git service.\
+          \ Setup is painless and supports every platform\nthat Go does, including\
+          \ Linux, macOS, Windows and ARM."
+        schema: https://gitlab.com/onecommons/unfurl-types#v0.6.1
+        type: Gogs
+        dependencies:
+        - MySQLDB
+        artifacts:
+        - docker.io/gogs/gogs
   unfurl.cloud/onecommons/blueprints/kubernetes-chores:
     git: unfurl.cloud/onecommons/blueprints/kubernetes-chores.git
     path: onecommons/blueprints/kubernetes-chores
@@ -179,6 +313,9 @@ repositories:
     default_branch: main
     branches:
       main: 7f20fa78fc87fa0d716f49392fa45cdf7a936c40
+    notable:
+      unfurl.yaml:
+        artifact_type: artifact.tosca.UnfurlProject
   unfurl.cloud/onecommons/blueprints/magento:
     git: unfurl.cloud/onecommons/blueprints/magento.git
     path: onecommons/blueprints/magento
@@ -198,6 +335,9 @@ repositories:
     default_branch: main
     branches:
       main: 408782b71206e7d8e848ab4f3923ffeb46435e70
+    notable:
+      unfurl.yaml:
+        artifact_type: artifact.tosca.UnfurlProject
   unfurl.cloud/onecommons/blueprints/mattermost-entreprise-edition-e0:
     git: unfurl.cloud/onecommons/blueprints/mattermost-entreprise-edition-e0.git
     path: onecommons/blueprints/mattermost-entreprise-edition-e0
@@ -215,6 +355,18 @@ repositories:
     default_branch: main
     branches:
       main: a62380555f443c75f2652c90862591f976087953
+    notable:
+      ensemble-template.yaml:
+        artifact_type: artifact.tosca.ServiceTemplate
+        name: MattermostEntrepriseEditionE0
+        version: '0.1'
+        description: Mattermost Team Edition open source collaboration/chat software
+        schema: https://unfurl.cloud/onecommons/unfurl-types.git#v0.4.0
+        type: MattermostEntrepriseEditionE0App
+        dependencies:
+        - PostgresDB
+        artifacts:
+        - docker.io/mattermost/mattermost-enterprise-edition
   unfurl.cloud/onecommons/blueprints/mediawiki:
     git: unfurl.cloud/onecommons/blueprints/mediawiki.git
     path: onecommons/blueprints/mediawiki
@@ -233,6 +385,19 @@ repositories:
     default_branch: main
     branches:
       main: 1c83db246a8d25b75963169c72f6464c9485fd0f
+    notable:
+      ensemble-template.yaml:
+        artifact_type: artifact.tosca.ServiceTemplate
+        name: Mediawiki
+        version: 0.1
+        description: MediaWiki is free and open-source wiki software used in Wikipedia,
+          Wiktionary, and many other online encyclopedias.
+        schema: https://gitlab.com/onecommons/unfurl-types#v0.6.1
+        type: Mediawiki
+        dependencies:
+        - MySQLDB
+        artifacts:
+        - docker.io/bitnami/mediawiki
   unfurl.cloud/onecommons/blueprints/memos:
     git: unfurl.cloud/onecommons/blueprints/memos.git
     path: onecommons/blueprints/memos
@@ -251,6 +416,17 @@ repositories:
     default_branch: main
     branches:
       main: 05adaf41f9ecc3b928dcd8dc147a39ad9545baeb
+    notable:
+      ensemble-template.yaml:
+        artifact_type: artifact.tosca.ServiceTemplate
+        name: Memos
+        version: '0.1'
+        description: An open-source, self-hosted memo hub with knowledge management
+          and socialization.
+        schema: https://unfurl.cloud/onecommons/unfurl-types.git#v0.4.0
+        type: MemosApp
+        artifacts:
+        - docker.io/neosmemo/memos
   unfurl.cloud/onecommons/blueprints/minecraft:
     git: unfurl.cloud/onecommons/blueprints/minecraft.git
     path: onecommons/blueprints/minecraft
@@ -269,6 +445,17 @@ repositories:
     default_branch: main
     branches:
       main: 28d07b29154e2f2fc7f6eaea290bb2180670629a
+    notable:
+      ensemble-template.yaml:
+        artifact_type: artifact.tosca.ServiceTemplate
+        name: Minecraft
+        version: 0.1
+        description: A Minecraft Server that will automatically download the latest
+          stable version at startup.
+        schema: https://gitlab.com/onecommons/unfurl-types#v0.6.1
+        type: Minecraft
+        artifacts:
+        - docker.io/itzg/minecraft-server
   unfurl.cloud/onecommons/blueprints/mod9:
     git: unfurl.cloud/onecommons/blueprints/mod9.git
     path: onecommons/blueprints/mod9
@@ -289,6 +476,21 @@ repositories:
     default_branch: main
     branches:
       main: 6019182ed56946646ec30073464b30e6cc4fd36d
+    notable:
+      ensemble-template.yaml:
+        artifact_type: artifact.tosca.ServiceTemplate
+        name: Mod9
+        version: 0.1
+        description: The Mod9 ASR Engine consists of a Linux server, along with compatible
+          models and support software, that enables clients to send commands and audio
+          over a network and receive the written transcript of what was said in the
+          audio.
+        schema: https://gitlab.com/onecommons/unfurl-types#v0.6.1
+        type: Mod9
+        dependencies:
+        - unfurl.nodes.Compute
+        artifacts:
+        - docker.io/mod9/asr
   unfurl.cloud/onecommons/blueprints/nextcloud:
     git: unfurl.cloud/onecommons/blueprints/nextcloud.git
     path: onecommons/blueprints/nextcloud
@@ -307,6 +509,17 @@ repositories:
     default_branch: main
     branches:
       main: 76a4c27bfcbff933b931ec7e4bac7d5baecdbccb
+    notable:
+      ensemble-template.yaml:
+        artifact_type: artifact.tosca.ServiceTemplate
+        name: Nextcloud
+        version: 0.1
+        description: A safe home for all your data. Access & share your files, calendars,
+          contacts, mail & more from any device, on your terms.
+        schema: https://gitlab.com/onecommons/unfurl-types#v0.6.1
+        type: Nextcloud
+        artifacts:
+        - docker.io/nextcloud
   unfurl.cloud/onecommons/blueprints/nginx:
     git: unfurl.cloud/onecommons/blueprints/nginx.git
     path: onecommons/blueprints/nginx
@@ -326,6 +539,17 @@ repositories:
     default_branch: main
     branches:
       main: 0f4181777531d9e66b08577a0660953e8be581c7
+    notable:
+      ensemble-template.yaml:
+        artifact_type: artifact.tosca.ServiceTemplate
+        name: NGINX
+        version: 0.1
+        schema: https://gitlab.com/onecommons/unfurl-types#v0.6.1
+        type: NGINX
+        dependencies:
+        - unfurl.nodes.Compute
+        artifacts:
+        - docker.io/bitnami/nginx
   unfurl.cloud/onecommons/blueprints/odoo:
     git: unfurl.cloud/onecommons/blueprints/odoo.git
     path: onecommons/blueprints/odoo
@@ -346,6 +570,9 @@ repositories:
     default_branch: main
     branches:
       main: 0c71348a66411c50a6951ed08f7b07a61169feab
+    notable:
+      unfurl.yaml:
+        artifact_type: artifact.tosca.UnfurlProject
   unfurl.cloud/onecommons/blueprints/openvscode-server:
     git: unfurl.cloud/onecommons/blueprints/openvscode-server.git
     path: onecommons/blueprints/openvscode-server
@@ -364,6 +591,17 @@ repositories:
     default_branch: main
     branches:
       main: 9e9e7512d8bcccd60ff70f20c6b5cc4e7064e9b4
+    notable:
+      ensemble-template.yaml:
+        artifact_type: artifact.tosca.ServiceTemplate
+        name: OpenvscodeServer
+        version: '0.1'
+        description: A version of VS Code that runs a server on a remote machine and
+          allows access through a modern web browser.
+        schema: https://unfurl.cloud/onecommons/unfurl-types.git#v0.4.0
+        type: OpenvscodeServerApp
+        artifacts:
+        - lscr.io/lscr.io/linuxserver/openvscode-server
   unfurl.cloud/onecommons/blueprints/unfurl-server:
     git: unfurl.cloud/onecommons/blueprints/unfurl-server.git
     path: onecommons/blueprints/unfurl-server
@@ -399,6 +637,17 @@ repositories:
     branches:
       main: cb17d2e38802f9fedf71472ac3cb3bf46d2fbfe1
       primary-deployment-blueprint: ecafbe75f5376f9eb0a97f545bc9df0efe27f88f
+    notable:
+      ensemble-template.yaml:
+        artifact_type: artifact.tosca.ServiceTemplate
+        name: WireGuard
+        version: 0.1
+        schema: https://gitlab.com/onecommons/unfurl-types#v0.6.1
+        type: WireGuard
+        dependencies:
+        - unfurl.nodes.Compute
+        artifacts:
+        - lscr.io/lscr.io/linuxserver/wireguard
   unfurl.cloud/onecommons/blueprints/wordpress:
     git: unfurl.cloud/onecommons/blueprints/wordpress.git
     path: onecommons/blueprints/wordpress
@@ -420,6 +669,19 @@ repositories:
     branches:
       jg-changes: ecae7112fbb6fc1b9902b1116081a0a4aeeea5ab
       main: 5e1566b8d4fa494b96f4b062eaa2efb656dae4e8
+    notable:
+      ensemble-template.yaml:
+        artifact_type: artifact.tosca.ServiceTemplate
+        name: WordPress
+        version: 0.1
+        description: WordPress is an powerful open-source website creation tool written
+          in PHP and makes setting up a blog or website extremely simple.
+        schema: https://gitlab.com/onecommons/unfurl-types#v0.6.1
+        type: WordPress
+        dependencies:
+        - MySQLDB
+        artifacts:
+        - docker.io/bitnami/wordpress
   unfurl.cloud/onecommons/blueprints/zulip:
     git: unfurl.cloud/onecommons/blueprints/zulip.git
     path: onecommons/blueprints/zulip
@@ -439,3 +701,57 @@ repositories:
     default_branch: main
     branches:
       main: 7a080e8fc677e618230c6631fe8df334382488a2
+    notable:
+      unfurl.yaml:
+        artifact_type: artifact.tosca.UnfurlProject
+artifacts:
+  docker.io/bitnami/mediawiki:
+    type: artifacts.OCIImage
+  docker.io/bitnami/mediawiki:latest:
+    type: container/image
+  docker.io/bitnami/nginx:
+    type: artifacts.OCIImage
+  docker.io/bitnami/nginx:latest:
+    type: container/image
+  docker.io/bitnami/wordpress:
+    type: artifacts.OCIImage
+  docker.io/cachethq/docker:
+    type: artifacts.OCIImage
+  docker.io/cachethq/docker:{{'.configured_by::cachet_version' | eval}}:
+    type: container/image
+  docker.io/docker.io/bitnami/discourse:
+    type: artifacts.OCIImage
+  docker.io/docker.io/bitnami/discourse:{{'.configured_by::discourse_version' | eval}}:
+    type: container/image
+  docker.io/etherpad/etherpad:
+    type: artifacts.OCIImage
+  docker.io/etherpad/etherpad:{{'.configured_by::etherpad_version' | eval}}:
+    type: container/image
+  docker.io/gogs/gogs:
+    type: artifacts.OCIImage
+  docker.io/itzg/minecraft-server:
+    type: artifacts.OCIImage
+  docker.io/mattermost/mattermost-enterprise-edition:
+    type: artifacts.OCIImage
+  docker.io/mattermost/mattermost-enterprise-edition:{{'.configured_by::mattermost_version' | eval}}:
+    type: container/image
+  docker.io/mod9/asr:
+    type: artifacts.OCIImage
+  docker.io/mod9/asr:latest:
+    type: container/image
+  docker.io/neosmemo/memos:
+    type: artifacts.OCIImage
+  docker.io/neosmemo/memos:{{'.configured_by::version' | eval}}:
+    type: container/image
+  docker.io/nextcloud:
+    type: artifacts.OCIImage
+  docker.io/soulteary/cronicle:
+    type: artifacts.OCIImage
+  docker.io/soulteary/cronicle:{{'.configured_by::version' | eval}}:
+    type: container/image
+  lscr.io/lscr.io/linuxserver/openvscode-server:
+    type: artifacts.OCIImage
+  lscr.io/lscr.io/linuxserver/openvscode-server:{{'.configured_by::openvscode_server_version' | eval}}:
+    type: container/image
+  lscr.io/lscr.io/linuxserver/wireguard:
+    type: artifacts.OCIImage

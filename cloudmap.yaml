@@ -4,8 +4,8 @@ repositories:
   unfurl.cloud/onecommons/blueprints/baserow:
     git: unfurl.cloud/onecommons/blueprints/baserow.git
     path: onecommons/blueprints/baserow
-    name: Baserow
     initial_revision: 48824cc98f92b5e15938dbee14cc6ac396d79230
+    name: Baserow
     protocols:
     - https
     - ssh
@@ -43,7 +43,7 @@ repositories:
     branches:
       main: 9a434b4d251f75070521be8ba1b7006d94689a3e
     notable:
-      ensemble-template.yaml:
+      ensemble-template.yaml#spec/service_template:
         artifact_type: artifact.tosca.ServiceTemplate
         name: Cachet
         version: '0.1'
@@ -82,7 +82,7 @@ repositories:
       main: 40ab0d91451ca92313c1c1abd480fb3e29b8bf79
       mar31a: 40ab0d91451ca92313c1c1abd480fb3e29b8bf79
     notable:
-      ensemble-template.yaml:
+      ensemble-template.yaml#spec/service_template:
         artifact_type: artifact.tosca.ServiceTemplate
         name: Container Webapp
         version: 0.1
@@ -118,7 +118,7 @@ repositories:
     branches:
       main: 7cd06ba9e789ac24c361c90c659a530c72337034
     notable:
-      ensemble-template.yaml:
+      ensemble-template.yaml#spec/service_template:
         artifact_type: artifact.tosca.ServiceTemplate
         name: Cronicle
         version: '0.1'
@@ -159,7 +159,7 @@ repositories:
     branches:
       main: e5f87a10ce92ca7fcc4ba432a17df86ea7ef0d1c
     notable:
-      ensemble-template.yaml:
+      ensemble-template.yaml#spec/service_template:
         artifact_type: artifact.tosca.ServiceTemplate
         name: Discourse
         version: '0.1'
@@ -224,7 +224,7 @@ repositories:
     branches:
       main: 74d7039838d40dff9614f05edf8ece2cebe6c4a5
     notable:
-      ensemble-template.yaml:
+      ensemble-template.yaml#spec/service_template:
         artifact_type: artifact.tosca.ServiceTemplate
         name: Etherpad
         version: '0.1'
@@ -290,7 +290,7 @@ repositories:
     branches:
       main: 149791560fb97a8ff7d492107b4b50ee97461a63
     notable:
-      ensemble-template.yaml:
+      ensemble-template.yaml#spec/service_template:
         artifact_type: artifact.tosca.ServiceTemplate
         name: Gogs
         version: 0.1
@@ -378,7 +378,7 @@ repositories:
     branches:
       main: a62380555f443c75f2652c90862591f976087953
     notable:
-      ensemble-template.yaml:
+      ensemble-template.yaml#spec/service_template:
         artifact_type: artifact.tosca.ServiceTemplate
         name: Mattermost Entreprise Edition E0
         version: '0.1'
@@ -419,7 +419,7 @@ repositories:
     branches:
       main: 1c83db246a8d25b75963169c72f6464c9485fd0f
     notable:
-      ensemble-template.yaml:
+      ensemble-template.yaml#spec/service_template:
         artifact_type: artifact.tosca.ServiceTemplate
         name: Mediawiki
         version: 0.1
@@ -462,7 +462,7 @@ repositories:
     branches:
       main: 05adaf41f9ecc3b928dcd8dc147a39ad9545baeb
     notable:
-      ensemble-template.yaml:
+      ensemble-template.yaml#spec/service_template:
         artifact_type: artifact.tosca.ServiceTemplate
         name: Memos
         version: '0.1'
@@ -502,7 +502,7 @@ repositories:
     branches:
       main: 28d07b29154e2f2fc7f6eaea290bb2180670629a
     notable:
-      ensemble-template.yaml:
+      ensemble-template.yaml#spec/service_template:
         artifact_type: artifact.tosca.ServiceTemplate
         name: Minecraft
         version: 0.1
@@ -543,7 +543,7 @@ repositories:
     branches:
       main: 6019182ed56946646ec30073464b30e6cc4fd36d
     notable:
-      ensemble-template.yaml:
+      ensemble-template.yaml#spec/service_template:
         artifact_type: artifact.tosca.ServiceTemplate
         name: Mod9
         version: 0.1
@@ -591,7 +591,7 @@ repositories:
     branches:
       main: 76a4c27bfcbff933b931ec7e4bac7d5baecdbccb
     notable:
-      ensemble-template.yaml:
+      ensemble-template.yaml#spec/service_template:
         artifact_type: artifact.tosca.ServiceTemplate
         name: Nextcloud
         version: 0.1
@@ -632,7 +632,7 @@ repositories:
     branches:
       main: 0f4181777531d9e66b08577a0660953e8be581c7
     notable:
-      ensemble-template.yaml:
+      ensemble-template.yaml#spec/service_template:
         artifact_type: artifact.tosca.ServiceTemplate
         name: NGINX
         version: 0.1
@@ -700,7 +700,7 @@ repositories:
     branches:
       main: 9e9e7512d8bcccd60ff70f20c6b5cc4e7064e9b4
     notable:
-      ensemble-template.yaml:
+      ensemble-template.yaml#spec/service_template:
         artifact_type: artifact.tosca.ServiceTemplate
         name: Openvscode Server
         version: '0.1'
@@ -757,7 +757,7 @@ repositories:
       main: cb17d2e38802f9fedf71472ac3cb3bf46d2fbfe1
       primary-deployment-blueprint: ecafbe75f5376f9eb0a97f545bc9df0efe27f88f
     notable:
-      ensemble-template.yaml:
+      ensemble-template.yaml#spec/service_template:
         artifact_type: artifact.tosca.ServiceTemplate
         name: WireGuard
         version: 0.1
@@ -804,7 +804,7 @@ repositories:
       jg-changes: ecae7112fbb6fc1b9902b1116081a0a4aeeea5ab
       main: 5e1566b8d4fa494b96f4b062eaa2efb656dae4e8
     notable:
-      ensemble-template.yaml:
+      ensemble-template.yaml#spec/service_template:
         artifact_type: artifact.tosca.ServiceTemplate
         name: WordPress
         version: 0.1

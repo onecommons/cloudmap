@@ -31,25 +31,25 @@ repositories:
         description: Baserow is an Open source no-code database and Airtable alternative
           that enables users without technical experience to create their own online
           database.
-        schema: https://gitlab.com/onecommons/unfurl-types#v0.7.4
+        schema: https://unfurl.cloud/onecommons/unfurl-types
         type:
           name: Baserow@unfurl.cloud/onecommons/blueprints/baserow
           title: Baserow
-          __typename: ResourceType
           extends:
           - Baserow@unfurl.cloud/onecommons/blueprints/baserow
-          - unfurl.nodes.WebApp@gitlab.com/onecommons/unfurl-types
-          - unfurl.nodes.ContainerApp@gitlab.com/onecommons/unfurl-types
-          - unfurl.nodes.App@gitlab.com/onecommons/unfurl-types
+          - unfurl.nodes.WebApp@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.ContainerApp@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.App@unfurl.cloud/onecommons/unfurl-types
           - tosca.nodes.Root
           - tosca.capabilities.Node
           - tosca.capabilities.Root
+        dependencies:
+        - SMTPServer@unfurl.cloud/onecommons/unfurl-types
         artifacts:
         - docker.io/baserow/baserow
   unfurl.cloud/onecommons/blueprints/cachet:
     git: unfurl.cloud/onecommons/blueprints/cachet.git
     path: onecommons/blueprints/cachet
-    initial_revision: 33c253d8ff84b5fa68de18f2be132cf28111b49e
     name: Cachet
     protocols:
     - https
@@ -72,11 +72,10 @@ repositories:
         name: Cachet
         version: '0.1'
         description: An open source status page system for everyone.
-        schema: https://unfurl.cloud/onecommons/unfurl-types.git#v0.7.4
+        schema: https://unfurl.cloud/onecommons/unfurl-types.git
         type:
           name: CachetApp@unfurl.cloud/onecommons/blueprints/cachet
           title: CachetApp
-          __typename: ResourceType
           extends:
           - CachetApp@unfurl.cloud/onecommons/blueprints/cachet
           - unfurl.nodes.WebApp@unfurl.cloud/onecommons/unfurl-types
@@ -86,13 +85,12 @@ repositories:
           - tosca.capabilities.Node
           - tosca.capabilities.Root
         dependencies:
-        - PostgresDB
+        - PostgresDB@unfurl.cloud/onecommons/unfurl-types
         artifacts:
         - docker.io/cachethq/docker
   unfurl.cloud/onecommons/blueprints/container-webapp:
     git: unfurl.cloud/onecommons/blueprints/container-webapp.git
     path: onecommons/blueprints/container-webapp
-    initial_revision: 8b094a154d80f42e5ccaf6da3b6eb28a605a910d
     name: Container Webapp
     protocols:
     - https
@@ -113,22 +111,21 @@ repositories:
         artifact_type: artifact.tosca.ServiceTemplate
         name: Container Webapp
         version: 0.1
-        schema: https://gitlab.com/onecommons/unfurl-types#v0.7.4
+        schema: https://unfurl.cloud/onecommons/unfurl-types
         type:
           name: GenericContainerApp@unfurl.cloud/onecommons/blueprints/container-webapp
           title: GenericContainerApp
           extends:
           - GenericContainerApp@unfurl.cloud/onecommons/blueprints/container-webapp
-          - unfurl.nodes.WebApp@gitlab.com/onecommons/unfurl-types
-          - unfurl.nodes.ContainerApp@gitlab.com/onecommons/unfurl-types
-          - unfurl.nodes.App@gitlab.com/onecommons/unfurl-types
+          - unfurl.nodes.WebApp@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.ContainerApp@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.App@unfurl.cloud/onecommons/unfurl-types
           - tosca.nodes.Root
           - tosca.capabilities.Node
           - tosca.capabilities.Root
   unfurl.cloud/onecommons/blueprints/cronicle:
     git: unfurl.cloud/onecommons/blueprints/cronicle.git
     path: onecommons/blueprints/cronicle
-    initial_revision: a4d91cb86c28efd4072782056e768ee86fbae011
     name: Cronicle
     protocols:
     - https
@@ -153,11 +150,10 @@ repositories:
         version: '0.1'
         description: A simple, distributed task scheduler and runner with a web based
           UI.
-        schema: https://unfurl.cloud/onecommons/unfurl-types.git#v0.7.4
+        schema: https://unfurl.cloud/onecommons/unfurl-types.git
         type:
           name: CronicleApp@unfurl.cloud/onecommons/blueprints/cronicle
           title: CronicleApp
-          __typename: ResourceType
           extends:
           - CronicleApp@unfurl.cloud/onecommons/blueprints/cronicle
           - unfurl.nodes.WebApp@unfurl.cloud/onecommons/unfurl-types
@@ -184,6 +180,7 @@ repositories:
         \ long-form chat room, and more!\r\n"
       issues_url: https://unfurl.cloud/onecommons/blueprints/discourse/-/issues
       homepage_url: https://unfurl.cloud/onecommons/blueprints/discourse
+      avatar_url: https://unfurl.cloud/uploads/-/system/project/avatar/34/discourse.png
     default_branch: main
     branches:
       main: b4f81fa1e4f7845203020c4678c6fca4c4b9c34f
@@ -197,7 +194,7 @@ repositories:
         description: Discourse is the 100% open source discussion platform built for
           the next decade of the Internet. Use it as a mailing list, discussion forum,
           long-form chat room, and more!
-        schema: https://unfurl.cloud/onecommons/unfurl-types.git#v0.7.4
+        schema: https://unfurl.cloud/onecommons/unfurl-types.git
         type:
           name: DiscourseApp@unfurl.cloud/onecommons/blueprints/discourse
           title: DiscourseApp
@@ -210,14 +207,13 @@ repositories:
           - tosca.capabilities.Node
           - tosca.capabilities.Root
         dependencies:
-        - PostgresDB
-        - Redis
+        - PostgresDB@unfurl.cloud/onecommons/unfurl-types
+        - Redis@unfurl.cloud/onecommons/unfurl-types
         artifacts:
         - docker.io/docker.io/bitnami/discourse
   unfurl.cloud/onecommons/blueprints/drupal:
     git: unfurl.cloud/onecommons/blueprints/drupal.git
     path: onecommons/blueprints/drupal
-    initial_revision: 6993d63c774a70f72a7ea9bf987451bc8a685b7d
     name: Drupal
     protocols:
     - https
@@ -240,26 +236,26 @@ repositories:
         artifact_type: artifact.tosca.ServiceTemplate
         name: Drupal
         version: 0.1
-        schema: https://gitlab.com/onecommons/unfurl-types#v0.7.4
+        schema: https://unfurl.cloud/onecommons/unfurl-types
         type:
           name: Drupal@unfurl.cloud/onecommons/blueprints/drupal
           title: Drupal
-          __typename: ResourceType
           extends:
           - Drupal@unfurl.cloud/onecommons/blueprints/drupal
-          - unfurl.nodes.SQLWebApp@gitlab.com/onecommons/unfurl-types
-          - unfurl.nodes.WebApp@gitlab.com/onecommons/unfurl-types
-          - unfurl.nodes.ContainerApp@gitlab.com/onecommons/unfurl-types
-          - unfurl.nodes.App@gitlab.com/onecommons/unfurl-types
+          - unfurl.nodes.SQLWebApp@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.WebApp@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.ContainerApp@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.App@unfurl.cloud/onecommons/unfurl-types
           - tosca.nodes.Root
           - tosca.capabilities.Node
           - tosca.capabilities.Root
+        dependencies:
+        - MySQLDB@unfurl.cloud/onecommons/unfurl-types
         artifacts:
         - docker.io/bitnami/drupal
   unfurl.cloud/onecommons/blueprints/etherpad:
     git: unfurl.cloud/onecommons/blueprints/etherpad.git
     path: onecommons/blueprints/etherpad
-    initial_revision: 7e2c2a868560deed588903812c11939771108a4d
     name: Etherpad
     protocols:
     - https
@@ -282,7 +278,7 @@ repositories:
         name: Etherpad
         version: '0.1'
         description: Etherpad is a real-time collaborative editor for the web
-        schema: https://unfurl.cloud/onecommons/unfurl-types.git#v0.7.4
+        schema: https://unfurl.cloud/onecommons/unfurl-types.git
         type:
           name: EtherpadApp@unfurl.cloud/onecommons/blueprints/etherpad
           title: EtherpadApp
@@ -295,13 +291,12 @@ repositories:
           - tosca.capabilities.Node
           - tosca.capabilities.Root
         dependencies:
-        - MySQLDB
+        - MySQLDB@unfurl.cloud/onecommons/unfurl-types
         artifacts:
         - docker.io/etherpad/etherpad
   unfurl.cloud/onecommons/blueprints/ghost:
     git: unfurl.cloud/onecommons/blueprints/ghost.git
     path: onecommons/blueprints/ghost
-    initial_revision: 6993d63c774a70f72a7ea9bf987451bc8a685b7d
     name: Ghost
     protocols:
     - https
@@ -328,25 +323,25 @@ repositories:
         version: 0.1
         description: Ghost is a free and open source CMS blogging platform with a
           rich editor and powerful customization.
-        schema: https://gitlab.com/onecommons/unfurl-types#v0.7.4
+        schema: https://unfurl.cloud/onecommons/unfurl-types
         type:
           name: GhostCMS@unfurl.cloud/onecommons/blueprints/ghost
           title: GhostCMS
-          __typename: ResourceType
           extends:
           - GhostCMS@unfurl.cloud/onecommons/blueprints/ghost
-          - unfurl.nodes.WebApp@gitlab.com/onecommons/unfurl-types
-          - unfurl.nodes.ContainerApp@gitlab.com/onecommons/unfurl-types
-          - unfurl.nodes.App@gitlab.com/onecommons/unfurl-types
+          - unfurl.nodes.WebApp@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.ContainerApp@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.App@unfurl.cloud/onecommons/unfurl-types
           - tosca.nodes.Root
           - tosca.capabilities.Node
           - tosca.capabilities.Root
+        dependencies:
+        - SMTPServer@unfurl.cloud/onecommons/unfurl-types
         artifacts:
         - docker.io/ghost
   unfurl.cloud/onecommons/blueprints/gogs:
     git: unfurl.cloud/onecommons/blueprints/gogs.git
     path: onecommons/blueprints/gogs
-    initial_revision: 8bae912d217eded49652381b09791cb3ba474e0a
     name: Gogs
     protocols:
     - https
@@ -373,28 +368,26 @@ repositories:
         description: "Gogs is a simple, stable, and extensible self-hosted Git service.\
           \ Setup is painless and supports every platform\nthat Go does, including\
           \ Linux, macOS, Windows and ARM."
-        schema: https://gitlab.com/onecommons/unfurl-types#v0.7.4
+        schema: https://unfurl.cloud/onecommons/unfurl-types
         type:
           name: Gogs@unfurl.cloud/onecommons/blueprints/gogs
           title: Gogs
-          __typename: ResourceType
           extends:
           - Gogs@unfurl.cloud/onecommons/blueprints/gogs
-          - unfurl.nodes.SQLWebApp@gitlab.com/onecommons/unfurl-types
-          - unfurl.nodes.WebApp@gitlab.com/onecommons/unfurl-types
-          - unfurl.nodes.ContainerApp@gitlab.com/onecommons/unfurl-types
-          - unfurl.nodes.App@gitlab.com/onecommons/unfurl-types
+          - unfurl.nodes.SQLWebApp@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.WebApp@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.ContainerApp@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.App@unfurl.cloud/onecommons/unfurl-types
           - tosca.nodes.Root
           - tosca.capabilities.Node
           - tosca.capabilities.Root
         dependencies:
-        - MySQLDB
+        - MySQLDB@unfurl.cloud/onecommons/unfurl-types
         artifacts:
         - docker.io/gogs/gogs
   unfurl.cloud/onecommons/blueprints/kubernetes-chores:
     git: unfurl.cloud/onecommons/blueprints/kubernetes-chores.git
     path: onecommons/blueprints/kubernetes-chores
-    initial_revision: f0248409c9f355735c1830b6698ee87fbd67e76d
     name: kubernetes-chores
     protocols:
     - https
@@ -414,11 +407,10 @@ repositories:
         artifact_type: artifact.tosca.ServiceTemplate
         name: Kubernetes Admin Chores
         version: 0.1
-        schema: https://gitlab.com/onecommons/unfurl-types#v0.7.4
+        schema: https://unfurl.cloud/onecommons/unfurl-types
         type:
           name: GKEClusterAdmin@unfurl.cloud/onecommons/blueprints/kubernetes-chores
           title: GKEClusterAdmin
-          __typename: ResourceType
           extends:
           - GKEClusterAdmin@unfurl.cloud/onecommons/blueprints/kubernetes-chores
           - ClusterAdmin@unfurl.cloud/onecommons/blueprints/kubernetes-chores
@@ -450,6 +442,7 @@ repositories:
         code is distributed under Open Software License v3.0.
       issues_url: https://unfurl.cloud/onecommons/blueprints/magento/-/issues
       homepage_url: https://unfurl.cloud/onecommons/blueprints/magento
+      avatar_url: https://unfurl.cloud/uploads/-/system/project/avatar/39/avatar.png
     default_branch: main
     branches:
       main: bf4c231a85bf3b014904fa1b8a7af84a3e8b8747
@@ -460,20 +453,21 @@ repositories:
         artifact_type: artifact.tosca.ServiceTemplate
         name: Magento
         version: 0.1
-        schema: https://gitlab.com/onecommons/unfurl-types#v0.7.4
+        schema: https://unfurl.cloud/onecommons/unfurl-types
         type:
           name: Magento@unfurl.cloud/onecommons/blueprints/magento
           title: Magento
-          __typename: ResourceType
           extends:
           - Magento@unfurl.cloud/onecommons/blueprints/magento
-          - unfurl.nodes.SQLWebApp@gitlab.com/onecommons/unfurl-types
-          - unfurl.nodes.WebApp@gitlab.com/onecommons/unfurl-types
-          - unfurl.nodes.ContainerApp@gitlab.com/onecommons/unfurl-types
-          - unfurl.nodes.App@gitlab.com/onecommons/unfurl-types
+          - unfurl.nodes.SQLWebApp@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.WebApp@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.ContainerApp@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.App@unfurl.cloud/onecommons/unfurl-types
           - tosca.nodes.Root
           - tosca.capabilities.Node
           - tosca.capabilities.Root
+        dependencies:
+        - MySQLDB@unfurl.cloud/onecommons/unfurl-types
         artifacts:
         - docker.io/bitnami/drupal
   unfurl.cloud/onecommons/blueprints/mattermost-entreprise-edition-e0:
@@ -483,11 +477,13 @@ repositories:
     protocols:
     - https
     - ssh
+    internal_id: '503'
     project_url: https://unfurl.cloud/onecommons/blueprints/mattermost-entreprise-edition-e0
     metadata:
       description: Mattermost Team Edition open source collaboration/chat software
       issues_url: https://unfurl.cloud/onecommons/blueprints/mattermost-entreprise-edition-e0/-/issues
       homepage_url: https://unfurl.cloud/onecommons/blueprints/mattermost-entreprise-edition-e0
+      avatar_url: https://unfurl.cloud/onecommons/blueprints/mattermost-entreprise-edition-e0/-/avatar
     default_branch: main
     branches:
       main: d9727a5fec198bcfa7ef274fc47a22f3bfb48221
@@ -499,11 +495,10 @@ repositories:
         name: Mattermost Entreprise Edition E0
         version: '0.1'
         description: Mattermost Team Edition open source collaboration/chat software
-        schema: https://unfurl.cloud/onecommons/unfurl-types.git#v0.7.4
+        schema: https://unfurl.cloud/onecommons/unfurl-types.git
         type:
           name: MattermostEntrepriseEditionE0App@unfurl.cloud/onecommons/blueprints/mattermost-entreprise-edition-e0
           title: MattermostEntrepriseEditionE0App
-          __typename: ResourceType
           extends:
           - MattermostEntrepriseEditionE0App@unfurl.cloud/onecommons/blueprints/mattermost-entreprise-edition-e0
           - unfurl.nodes.WebApp@unfurl.cloud/onecommons/unfurl-types
@@ -512,6 +507,8 @@ repositories:
           - tosca.nodes.Root
           - tosca.capabilities.Node
           - tosca.capabilities.Root
+        dependencies:
+        - PostgresDB@unfurl.cloud/onecommons/unfurl-types
         artifacts:
         - docker.io/mattermost/mattermost-enterprise-edition
   unfurl.cloud/onecommons/blueprints/mediawiki:
@@ -521,12 +518,14 @@ repositories:
     protocols:
     - https
     - ssh
+    internal_id: '35'
     project_url: https://unfurl.cloud/onecommons/blueprints/mediawiki
     metadata:
       description: MediaWiki is free and open-source wiki software used in Wikipedia,
         Wiktionary, and many other online encyclopedias.
       issues_url: https://unfurl.cloud/onecommons/blueprints/mediawiki/-/issues
       homepage_url: https://unfurl.cloud/onecommons/blueprints/mediawiki
+      avatar_url: https://unfurl.cloud/uploads/-/system/project/avatar/35/avatar.png
     default_branch: main
     branches:
       main: 225932bc2a45473d682e48f272bc48fcd83909bb
@@ -539,20 +538,21 @@ repositories:
         version: 0.1
         description: MediaWiki is free and open-source wiki software used in Wikipedia,
           Wiktionary, and many other online encyclopedias.
-        schema: https://gitlab.com/onecommons/unfurl-types#v0.7.4
+        schema: https://unfurl.cloud/onecommons/unfurl-types
         type:
           name: Mediawiki@unfurl.cloud/onecommons/blueprints/mediawiki
           title: Mediawiki
-          __typename: ResourceType
           extends:
           - Mediawiki@unfurl.cloud/onecommons/blueprints/mediawiki
-          - unfurl.nodes.SQLWebApp@gitlab.com/onecommons/unfurl-types
-          - unfurl.nodes.WebApp@gitlab.com/onecommons/unfurl-types
-          - unfurl.nodes.ContainerApp@gitlab.com/onecommons/unfurl-types
-          - unfurl.nodes.App@gitlab.com/onecommons/unfurl-types
+          - unfurl.nodes.SQLWebApp@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.WebApp@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.ContainerApp@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.App@unfurl.cloud/onecommons/unfurl-types
           - tosca.nodes.Root
           - tosca.capabilities.Node
           - tosca.capabilities.Root
+        dependencies:
+        - MySQLDB@unfurl.cloud/onecommons/unfurl-types
         artifacts:
         - docker.io/bitnami/mediawiki
   unfurl.cloud/onecommons/blueprints/memos:
@@ -562,12 +562,14 @@ repositories:
     protocols:
     - https
     - ssh
+    internal_id: '507'
     project_url: https://unfurl.cloud/onecommons/blueprints/memos
     metadata:
       description: "An open-source, self-hosted memo hub with knowledge management\
         \ and socialization.\r\n"
       issues_url: https://unfurl.cloud/onecommons/blueprints/memos/-/issues
       homepage_url: https://unfurl.cloud/onecommons/blueprints/memos
+      avatar_url: https://unfurl.cloud/onecommons/blueprints/memos/-/avatar
     default_branch: main
     branches:
       main: e01875f486a3a2c14c9e728069ea166716ec46f2
@@ -580,11 +582,10 @@ repositories:
         version: '0.1'
         description: An open-source, self-hosted memo hub with knowledge management
           and socialization.
-        schema: https://unfurl.cloud/onecommons/unfurl-types.git#v0.7.4
+        schema: https://unfurl.cloud/onecommons/unfurl-types.git
         type:
           name: MemosApp@unfurl.cloud/onecommons/blueprints/memos
           title: MemosApp
-          __typename: ResourceType
           extends:
           - MemosApp@unfurl.cloud/onecommons/blueprints/memos
           - unfurl.nodes.WebApp@unfurl.cloud/onecommons/unfurl-types
@@ -602,6 +603,7 @@ repositories:
     protocols:
     - https
     - ssh
+    internal_id: '32'
     project_url: https://unfurl.cloud/onecommons/blueprints/minecraft
     metadata:
       description: A Minecraft Server that will automatically download the latest
@@ -621,15 +623,14 @@ repositories:
         version: 0.1
         description: A Minecraft Server that will automatically download the latest
           stable version at startup.
-        schema: https://gitlab.com/onecommons/unfurl-types#v0.7.4
+        schema: https://unfurl.cloud/onecommons/unfurl-types
         type:
           name: Minecraft@unfurl.cloud/onecommons/blueprints/minecraft
           title: Minecraft
-          __typename: ResourceType
           extends:
           - Minecraft@unfurl.cloud/onecommons/blueprints/minecraft
-          - unfurl.nodes.ContainerApp@gitlab.com/onecommons/unfurl-types
-          - unfurl.nodes.App@gitlab.com/onecommons/unfurl-types
+          - unfurl.nodes.ContainerApp@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.App@unfurl.cloud/onecommons/unfurl-types
           - tosca.nodes.Root
           - tosca.capabilities.Node
           - tosca.capabilities.Root
@@ -714,16 +715,15 @@ repositories:
         version: 0.1
         description: A safe home for all your data. Access & share your files, calendars,
           contacts, mail & more from any device, on your terms.
-        schema: https://gitlab.com/onecommons/unfurl-types#v0.7.4
+        schema: https://unfurl.cloud/onecommons/unfurl-types
         type:
           name: Nextcloud@unfurl.cloud/onecommons/blueprints/nextcloud
           title: Nextcloud
-          __typename: ResourceType
           extends:
           - Nextcloud@unfurl.cloud/onecommons/blueprints/nextcloud
-          - unfurl.nodes.WebApp@gitlab.com/onecommons/unfurl-types
-          - unfurl.nodes.ContainerApp@gitlab.com/onecommons/unfurl-types
-          - unfurl.nodes.App@gitlab.com/onecommons/unfurl-types
+          - unfurl.nodes.WebApp@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.ContainerApp@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.App@unfurl.cloud/onecommons/unfurl-types
           - tosca.nodes.Root
           - tosca.capabilities.Node
           - tosca.capabilities.Root
@@ -756,16 +756,16 @@ repositories:
         artifact_type: artifact.tosca.ServiceTemplate
         name: NGINX
         version: 0.1
-        schema: https://gitlab.com/onecommons/unfurl-types#v0.7.4
+        schema: https://unfurl.cloud/onecommons/unfurl-types
         type:
           name: NGINX@unfurl.cloud/onecommons/blueprints/nginx
           title: NGINX
           extends:
           - NGINX@unfurl.cloud/onecommons/blueprints/nginx
-          - unfurl.nodes.DockerComputeHost@gitlab.com/onecommons/unfurl-types
-          - unfurl.nodes.ContainerComputeHost@gitlab.com/onecommons/unfurl-types
-          - unfurl.nodes.DockerHost@gitlab.com/onecommons/unfurl-types
-          - unfurl.nodes.ServiceHost@gitlab.com/onecommons/unfurl-types
+          - unfurl.nodes.DockerComputeHost@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.ContainerComputeHost@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.DockerHost@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.ServiceHost@unfurl.cloud/onecommons/unfurl-types
           - tosca.nodes.Root
           - tosca.capabilities.Node
           - tosca.capabilities.Root
@@ -804,24 +804,24 @@ repositories:
         artifact_type: artifact.tosca.ServiceTemplate
         name: Odoo
         version: 0.1
-        schema: https://gitlab.com/onecommons/unfurl-types#v0.7.4
+        schema: https://unfurl.cloud/onecommons/unfurl-types
         type:
           name: Odoo@unfurl.cloud/onecommons/blueprints/odoo
           title: Odoo
-          __typename: ResourceType
           extends:
           - Odoo@unfurl.cloud/onecommons/blueprints/odoo
-          - unfurl.nodes.SoftwareService@gitlab.com/onecommons/unfurl-types
-          - unfurl.nodes.SoftwareComponent@gitlab.com/onecommons/unfurl-types
+          - unfurl.nodes.SoftwareService@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.SoftwareComponent@unfurl.cloud/onecommons/unfurl-types
           - tosca.nodes.Root
           - tosca.capabilities.Node
           - tosca.capabilities.Root
+        dependencies:
+        - PostgresDB@unfurl.cloud/onecommons/unfurl-types
         artifacts:
         - docker.io/bitnami/odoo
   unfurl.cloud/onecommons/blueprints/openvscode-server:
     git: unfurl.cloud/onecommons/blueprints/openvscode-server.git
     path: onecommons/blueprints/openvscode-server
-    initial_revision: 4dbc445ecd62b75c3f620be9562ab3ddda32f2ea
     name: OpenVSCode Server
     protocols:
     - https
@@ -846,11 +846,10 @@ repositories:
         version: '0.1'
         description: A version of VS Code that runs a server on a remote machine and
           allows access through a modern web browser.
-        schema: https://unfurl.cloud/onecommons/unfurl-types.git#v0.7.4
+        schema: https://unfurl.cloud/onecommons/unfurl-types.git
         type:
           name: OpenvscodeServerApp@unfurl.cloud/onecommons/blueprints/openvscode-server
           title: OpenvscodeServerApp
-          __typename: ResourceType
           extends:
           - OpenvscodeServerApp@unfurl.cloud/onecommons/blueprints/openvscode-server
           - unfurl.nodes.WebApp@unfurl.cloud/onecommons/unfurl-types
@@ -873,7 +872,6 @@ repositories:
     metadata:
       issues_url: https://unfurl.cloud/onecommons/blueprints/unfurl-server/-/issues
       homepage_url: https://unfurl.cloud/onecommons/blueprints/unfurl-server
-    private: true
     default_branch: main
     branches:
       main: 846da315e6d36748a141bf13cba1fe6068b02fc3
@@ -884,11 +882,10 @@ repositories:
         artifact_type: artifact.tosca.ServiceTemplate
         name: Unfurl Server Service
         description: unfurl as a service
-        schema: https://unfurl.cloud/onecommons/unfurl-types.git#v0.7.4
+        schema: https://unfurl.cloud/onecommons/unfurl-types.git
         type:
           name: UnfurlServerApp@unfurl.cloud/onecommons/blueprints/unfurl-server
           title: UnfurlServerApp
-          __typename: ResourceType
           extends:
           - UnfurlServerApp@unfurl.cloud/onecommons/blueprints/unfurl-server
           - unfurl.nodes.APIServiceApp@unfurl.cloud/onecommons/unfurl-types
@@ -897,12 +894,13 @@ repositories:
           - tosca.nodes.Root
           - tosca.capabilities.Node
           - tosca.capabilities.Root
+        dependencies:
+        - Redis@unfurl.cloud/onecommons/unfurl-types
         artifacts:
         - docker.io/{{ root.app.unfurl_container_image }}
   unfurl.cloud/onecommons/blueprints/wireguard:
     git: unfurl.cloud/onecommons/blueprints/wireguard.git
     path: onecommons/blueprints/wireguard
-    initial_revision: 381ebce1df8aded00723ad2d4f3e5b12cf76b68a
     name: WireGuard
     protocols:
     - https
@@ -975,27 +973,26 @@ repositories:
         version: 0.1
         description: WordPress is an powerful open-source website creation tool written
           in PHP and makes setting up a blog or website extremely simple.
-        schema: https://gitlab.com/onecommons/unfurl-types#v0.7.4
+        schema: https://unfurl.cloud/onecommons/unfurl-types
         type:
           name: WordPress@unfurl.cloud/onecommons/blueprints/wordpress
           title: WordPress
           extends:
           - WordPress@unfurl.cloud/onecommons/blueprints/wordpress
-          - unfurl.nodes.SQLWebApp@gitlab.com/onecommons/unfurl-types
-          - unfurl.nodes.WebApp@gitlab.com/onecommons/unfurl-types
-          - unfurl.nodes.ContainerApp@gitlab.com/onecommons/unfurl-types
-          - unfurl.nodes.App@gitlab.com/onecommons/unfurl-types
+          - unfurl.nodes.SQLWebApp@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.WebApp@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.ContainerApp@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.App@unfurl.cloud/onecommons/unfurl-types
           - tosca.nodes.Root
           - tosca.capabilities.Node
           - tosca.capabilities.Root
         dependencies:
-        - MySQLDB
+        - MySQLDB@unfurl.cloud/onecommons/unfurl-types
         artifacts:
         - docker.io/bitnami/wordpress
   unfurl.cloud/onecommons/blueprints/zulip:
     git: unfurl.cloud/onecommons/blueprints/zulip.git
     path: onecommons/blueprints/zulip
-    initial_revision: 91b0728548129b357d8a0a3dff57856abba7b5e6
     name: Zulip
     protocols:
     - https
@@ -1019,16 +1016,16 @@ repositories:
         artifact_type: artifact.tosca.ServiceTemplate
         name: Zulip
         version: 0.1
-        schema: https://gitlab.com/onecommons/unfurl-types#v0.7.4
+        schema: https://unfurl.cloud/onecommons/unfurl-types#v0.7.4
         type:
           name: Zulip@unfurl.cloud/onecommons/blueprints/zulip
           title: Zulip
           __typename: ResourceType
           extends:
           - Zulip@unfurl.cloud/onecommons/blueprints/zulip
-          - unfurl.nodes.WebApp@gitlab.com/onecommons/unfurl-types
-          - unfurl.nodes.ContainerApp@gitlab.com/onecommons/unfurl-types
-          - unfurl.nodes.App@gitlab.com/onecommons/unfurl-types
+          - unfurl.nodes.WebApp@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.ContainerApp@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.App@unfurl.cloud/onecommons/unfurl-types
           - tosca.nodes.Root
           - tosca.capabilities.Node
           - tosca.capabilities.Root

@@ -4,7 +4,6 @@ repositories:
   unfurl.cloud/onecommons/blueprints/baserow:
     git: unfurl.cloud/onecommons/blueprints/baserow.git
     path: onecommons/blueprints/baserow
-    initial_revision: 48824cc98f92b5e15938dbee14cc6ac396d79230
     name: Baserow
     protocols:
     - https
@@ -20,9 +19,10 @@ repositories:
       avatar_url: https://unfurl.cloud/uploads/-/system/project/avatar/93/avatar.png
     default_branch: main
     branches:
-      main: 4aeddf5a42a3dccfcf809b69517b342aa7ab9d9c
+      main: f3d902ae0ec52d4f869f8dbeb0c6438eeeb83030
     tags:
-      v0.1.0: 0823ae3e053c2ad340d395df8af7a7cfcced27e0
+      v1.0.0: f3d902ae0ec52d4f869f8dbeb0c6438eeeb83030
+      v0.1.0: 4aeddf5a42a3dccfcf809b69517b342aa7ab9d9c
     notable:
       ensemble-template.yaml#spec/service_template:
         artifact_type: artifact.tosca.ServiceTemplate
@@ -31,20 +31,20 @@ repositories:
         description: Baserow is an Open source no-code database and Airtable alternative
           that enables users without technical experience to create their own online
           database.
-        schema: https://unfurl.cloud/onecommons/unfurl-types
         type:
           name: Baserow@unfurl.cloud/onecommons/blueprints/baserow
           title: Baserow
           extends:
           - Baserow@unfurl.cloud/onecommons/blueprints/baserow
-          - unfurl.nodes.WebApp@unfurl.cloud/onecommons/unfurl-types
-          - unfurl.nodes.ContainerApp@unfurl.cloud/onecommons/unfurl-types
-          - unfurl.nodes.App@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.WebApp@unfurl.cloud/onecommons/std:generic_types
+          - WebApp@unfurl.cloud/onecommons/std:generic_types
+          - _ContainerAppBase@unfurl.cloud/onecommons/std:generic_types
+          - App@unfurl.cloud/onecommons/std:generic_types
           - tosca.nodes.Root
           - tosca.capabilities.Node
           - tosca.capabilities.Root
         dependencies:
-        - SMTPServer@unfurl.cloud/onecommons/unfurl-types
+        - SMTPServer@unfurl.cloud/onecommons/std:generic_types
         artifacts:
         - docker.io/baserow/baserow
   unfurl.cloud/onecommons/blueprints/cachet:
@@ -63,29 +63,30 @@ repositories:
       avatar_url: https://unfurl.cloud/onecommons/blueprints/cachet/-/avatar
     default_branch: main
     branches:
-      main: a82b80efe8c4f6e1ecd535747b4b6a530d4872ff
+      main: 2da68fe0d1014805d15fc9134352626cb136e066
     tags:
-      v0.1.0: 6c964478ae11e2b7edc6f2722795dffc64ceee41
+      v1.0.0: 2da68fe0d1014805d15fc9134352626cb136e066
+      v0.1.0: a82b80efe8c4f6e1ecd535747b4b6a530d4872ff
     notable:
       ensemble-template.yaml#spec/service_template:
         artifact_type: artifact.tosca.ServiceTemplate
         name: Cachet
         version: '0.1'
         description: An open source status page system for everyone.
-        schema: https://unfurl.cloud/onecommons/unfurl-types.git
         type:
           name: CachetApp@unfurl.cloud/onecommons/blueprints/cachet
           title: CachetApp
           extends:
           - CachetApp@unfurl.cloud/onecommons/blueprints/cachet
-          - unfurl.nodes.WebApp@unfurl.cloud/onecommons/unfurl-types
-          - unfurl.nodes.ContainerApp@unfurl.cloud/onecommons/unfurl-types
-          - unfurl.nodes.App@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.WebApp@unfurl.cloud/onecommons/std:generic_types
+          - WebApp@unfurl.cloud/onecommons/std:generic_types
+          - _ContainerAppBase@unfurl.cloud/onecommons/std:generic_types
+          - App@unfurl.cloud/onecommons/std:generic_types
           - tosca.nodes.Root
           - tosca.capabilities.Node
           - tosca.capabilities.Root
         dependencies:
-        - PostgresDB@unfurl.cloud/onecommons/unfurl-types
+        - PostgresDB@unfurl.cloud/onecommons/std:generic_types
         artifacts:
         - docker.io/cachethq/docker
   unfurl.cloud/onecommons/blueprints/container-webapp:
@@ -102,24 +103,25 @@ repositories:
       homepage_url: https://unfurl.cloud/onecommons/blueprints/container-webapp
     default_branch: main
     branches:
-      main: 1f002fdb1c45eb0cefb840cafbb782b80e40dfaa
+      main: e68daad5be7e4c3b4eb670a78da4cc739f368da8
       mar31a: 40ab0d91451ca92313c1c1abd480fb3e29b8bf79
     tags:
-      v0.1.0: 609ddf0e72ff6c61771512c692cdccf4b150fbe0
+      v1.0.0: 6da27daea9ba5d7beb6de33990f642223124453b
+      v0.1.0: c59239a24de926eb94ca168f9bfdaa3ae4867f87
     notable:
       ensemble-template.yaml#spec/service_template:
         artifact_type: artifact.tosca.ServiceTemplate
         name: Container Webapp
         version: 0.1
-        schema: https://unfurl.cloud/onecommons/unfurl-types
         type:
           name: GenericContainerApp@unfurl.cloud/onecommons/blueprints/container-webapp
           title: GenericContainerApp
           extends:
           - GenericContainerApp@unfurl.cloud/onecommons/blueprints/container-webapp
-          - unfurl.nodes.WebApp@unfurl.cloud/onecommons/unfurl-types
-          - unfurl.nodes.ContainerApp@unfurl.cloud/onecommons/unfurl-types
-          - unfurl.nodes.App@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.WebApp@unfurl.cloud/onecommons/std:generic_types
+          - WebApp@unfurl.cloud/onecommons/std:generic_types
+          - _ContainerAppBase@unfurl.cloud/onecommons/std:generic_types
+          - App@unfurl.cloud/onecommons/std:generic_types
           - tosca.nodes.Root
           - tosca.capabilities.Node
           - tosca.capabilities.Root
@@ -140,9 +142,10 @@ repositories:
       avatar_url: https://unfurl.cloud/onecommons/blueprints/cronicle/-/avatar
     default_branch: main
     branches:
-      main: 2f9288e491d47ab0d976c135a5a17475bc9c746a
+      main: c927e49f0fa1bc6c957cc16ca9d554b46d1abe73
     tags:
-      v0.1.0: 1eed4d6ed76a2200cf97253bfd7be9f401c3cbed
+      v1.0.0: c927e49f0fa1bc6c957cc16ca9d554b46d1abe73
+      v0.1.0: 2f9288e491d47ab0d976c135a5a17475bc9c746a
     notable:
       ensemble-template.yaml#spec/service_template:
         artifact_type: artifact.tosca.ServiceTemplate
@@ -150,15 +153,15 @@ repositories:
         version: '0.1'
         description: A simple, distributed task scheduler and runner with a web based
           UI.
-        schema: https://unfurl.cloud/onecommons/unfurl-types.git
         type:
           name: CronicleApp@unfurl.cloud/onecommons/blueprints/cronicle
           title: CronicleApp
           extends:
           - CronicleApp@unfurl.cloud/onecommons/blueprints/cronicle
-          - unfurl.nodes.WebApp@unfurl.cloud/onecommons/unfurl-types
-          - unfurl.nodes.ContainerApp@unfurl.cloud/onecommons/unfurl-types
-          - unfurl.nodes.App@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.WebApp@unfurl.cloud/onecommons/std:generic_types
+          - WebApp@unfurl.cloud/onecommons/std:generic_types
+          - _ContainerAppBase@unfurl.cloud/onecommons/std:generic_types
+          - App@unfurl.cloud/onecommons/std:generic_types
           - tosca.nodes.Root
           - tosca.capabilities.Node
           - tosca.capabilities.Root
@@ -167,7 +170,6 @@ repositories:
   unfurl.cloud/onecommons/blueprints/discourse:
     git: unfurl.cloud/onecommons/blueprints/discourse.git
     path: onecommons/blueprints/discourse
-    initial_revision: 0e85a0841b1b901fc52b541a4dc206844694399a
     name: Discourse
     protocols:
     - https
@@ -183,9 +185,10 @@ repositories:
       avatar_url: https://unfurl.cloud/uploads/-/system/project/avatar/34/discourse.png
     default_branch: main
     branches:
-      main: b4f81fa1e4f7845203020c4678c6fca4c4b9c34f
+      main: 17d70062363525493a7dc78c82a8f8dd7c7e5289
     tags:
-      v0.1.0: c362ddba5fd49e05e10958967745422f34f96bb2
+      v1.0.0: 17d70062363525493a7dc78c82a8f8dd7c7e5289
+      v0.1.0: b4f81fa1e4f7845203020c4678c6fca4c4b9c34f
     notable:
       ensemble-template.yaml#spec/service_template:
         artifact_type: artifact.tosca.ServiceTemplate
@@ -194,21 +197,21 @@ repositories:
         description: Discourse is the 100% open source discussion platform built for
           the next decade of the Internet. Use it as a mailing list, discussion forum,
           long-form chat room, and more!
-        schema: https://unfurl.cloud/onecommons/unfurl-types.git
         type:
           name: DiscourseApp@unfurl.cloud/onecommons/blueprints/discourse
           title: DiscourseApp
           extends:
           - DiscourseApp@unfurl.cloud/onecommons/blueprints/discourse
-          - unfurl.nodes.WebApp@unfurl.cloud/onecommons/unfurl-types
-          - unfurl.nodes.ContainerApp@unfurl.cloud/onecommons/unfurl-types
-          - unfurl.nodes.App@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.WebApp@unfurl.cloud/onecommons/std:generic_types
+          - WebApp@unfurl.cloud/onecommons/std:generic_types
+          - _ContainerAppBase@unfurl.cloud/onecommons/std:generic_types
+          - App@unfurl.cloud/onecommons/std:generic_types
           - tosca.nodes.Root
           - tosca.capabilities.Node
           - tosca.capabilities.Root
         dependencies:
-        - PostgresDB@unfurl.cloud/onecommons/unfurl-types
-        - Redis@unfurl.cloud/onecommons/unfurl-types
+        - PostgresDB@unfurl.cloud/onecommons/std:generic_types
+        - Redis@unfurl.cloud/onecommons/std:generic_types
         artifacts:
         - docker.io/docker.io/bitnami/discourse
   unfurl.cloud/onecommons/blueprints/drupal:
@@ -230,13 +233,14 @@ repositories:
     branches:
       main: ffca5c723863bdd9c38794be19aecf2590c14dfa
     tags:
-      v0.1.0: 9d6e6265a3a197d7f2aff0acaee6f9752a1c718c
+      v1.0.0: e62bb8be58bdbad109ff8583f787442ca222bf5e
+      v0.1.0: 75635887634d0c4492cf63ace18c78c3e1259bb9
     notable:
       ensemble-template.yaml#spec/service_template:
         artifact_type: artifact.tosca.ServiceTemplate
         name: Drupal
         version: 0.1
-        schema: https://unfurl.cloud/onecommons/unfurl-types
+        schema: https://unfurl.cloud/onecommons/unfurl-types#v0.7.6
         type:
           name: Drupal@unfurl.cloud/onecommons/blueprints/drupal
           title: Drupal
@@ -269,29 +273,30 @@ repositories:
       avatar_url: https://unfurl.cloud/onecommons/blueprints/etherpad/-/avatar
     default_branch: main
     branches:
-      main: 9e560cfa0262467efc0db148eb470486f5a224be
+      main: 93ef51ef36d7d75af131ab9c4221a0031ee39832
     tags:
-      v0.1.0: 2631859f182fd62c73ccee67fa6724695dcaf7b0
+      v1.0.0: 93ef51ef36d7d75af131ab9c4221a0031ee39832
+      v0.1.0: 9e560cfa0262467efc0db148eb470486f5a224be
     notable:
       ensemble-template.yaml#spec/service_template:
         artifact_type: artifact.tosca.ServiceTemplate
         name: Etherpad
         version: '0.1'
         description: Etherpad is a real-time collaborative editor for the web
-        schema: https://unfurl.cloud/onecommons/unfurl-types.git
         type:
           name: EtherpadApp@unfurl.cloud/onecommons/blueprints/etherpad
           title: EtherpadApp
           extends:
           - EtherpadApp@unfurl.cloud/onecommons/blueprints/etherpad
-          - unfurl.nodes.WebApp@unfurl.cloud/onecommons/unfurl-types
-          - unfurl.nodes.ContainerApp@unfurl.cloud/onecommons/unfurl-types
-          - unfurl.nodes.App@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.WebApp@unfurl.cloud/onecommons/std:generic_types
+          - WebApp@unfurl.cloud/onecommons/std:generic_types
+          - _ContainerAppBase@unfurl.cloud/onecommons/std:generic_types
+          - App@unfurl.cloud/onecommons/std:generic_types
           - tosca.nodes.Root
           - tosca.capabilities.Node
           - tosca.capabilities.Root
         dependencies:
-        - MySQLDB@unfurl.cloud/onecommons/unfurl-types
+        - MySQLDB@unfurl.cloud/onecommons/std:generic_types
         artifacts:
         - docker.io/etherpad/etherpad
   unfurl.cloud/onecommons/blueprints/ghost:
@@ -313,9 +318,10 @@ repositories:
     default_branch: main
     branches:
       jg-changes: 830664742e265e0765325ad2f4521d71be39f84f
-      main: b7bdc4762e74ed4a33ad23d4d895a96d35523c94
+      main: 76e30bbe5d4a5de6e301ffae02a8138a8ca9057c
     tags:
-      v0.1.0: b4cfb86440f8471403f6941099a2633991337c38
+      v1.0.0: 76e30bbe5d4a5de6e301ffae02a8138a8ca9057c
+      v0.1.0: b7bdc4762e74ed4a33ad23d4d895a96d35523c94
     notable:
       ensemble-template.yaml#spec/service_template:
         artifact_type: artifact.tosca.ServiceTemplate
@@ -323,20 +329,20 @@ repositories:
         version: 0.1
         description: Ghost is a free and open source CMS blogging platform with a
           rich editor and powerful customization.
-        schema: https://unfurl.cloud/onecommons/unfurl-types
         type:
           name: GhostCMS@unfurl.cloud/onecommons/blueprints/ghost
           title: GhostCMS
           extends:
           - GhostCMS@unfurl.cloud/onecommons/blueprints/ghost
-          - unfurl.nodes.WebApp@unfurl.cloud/onecommons/unfurl-types
-          - unfurl.nodes.ContainerApp@unfurl.cloud/onecommons/unfurl-types
-          - unfurl.nodes.App@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.WebApp@unfurl.cloud/onecommons/std:generic_types
+          - WebApp@unfurl.cloud/onecommons/std:generic_types
+          - _ContainerAppBase@unfurl.cloud/onecommons/std:generic_types
+          - App@unfurl.cloud/onecommons/std:generic_types
           - tosca.nodes.Root
           - tosca.capabilities.Node
           - tosca.capabilities.Root
         dependencies:
-        - SMTPServer@unfurl.cloud/onecommons/unfurl-types
+        - SMTPServer@unfurl.cloud/onecommons/std:generic_types
         artifacts:
         - docker.io/ghost
   unfurl.cloud/onecommons/blueprints/gogs:
@@ -357,9 +363,10 @@ repositories:
       avatar_url: https://unfurl.cloud/uploads/-/system/project/avatar/96/avatar.png
     default_branch: main
     branches:
-      main: a1b74202eb422fdec13eaf3ab15886f587247458
+      main: 92bc7ad5e140772ff974c78cbb6abe4b10a7af8d
     tags:
-      v0.1.0: c5351bf9c4ef684af056b0573b62deedbc33d11a
+      v1.0.0: 92bc7ad5e140772ff974c78cbb6abe4b10a7af8d
+      v0.1.0: a1b74202eb422fdec13eaf3ab15886f587247458
     notable:
       ensemble-template.yaml#spec/service_template:
         artifact_type: artifact.tosca.ServiceTemplate
@@ -368,21 +375,21 @@ repositories:
         description: "Gogs is a simple, stable, and extensible self-hosted Git service.\
           \ Setup is painless and supports every platform\nthat Go does, including\
           \ Linux, macOS, Windows and ARM."
-        schema: https://unfurl.cloud/onecommons/unfurl-types
         type:
           name: Gogs@unfurl.cloud/onecommons/blueprints/gogs
           title: Gogs
           extends:
           - Gogs@unfurl.cloud/onecommons/blueprints/gogs
-          - unfurl.nodes.SQLWebApp@unfurl.cloud/onecommons/unfurl-types
-          - unfurl.nodes.WebApp@unfurl.cloud/onecommons/unfurl-types
-          - unfurl.nodes.ContainerApp@unfurl.cloud/onecommons/unfurl-types
-          - unfurl.nodes.App@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.SQLWebApp@unfurl.cloud/onecommons/std:generic_types
+          - SQLWebApp@unfurl.cloud/onecommons/std:generic_types
+          - WebApp@unfurl.cloud/onecommons/std:generic_types
+          - _ContainerAppBase@unfurl.cloud/onecommons/std:generic_types
+          - App@unfurl.cloud/onecommons/std:generic_types
           - tosca.nodes.Root
           - tosca.capabilities.Node
           - tosca.capabilities.Root
         dependencies:
-        - MySQLDB@unfurl.cloud/onecommons/unfurl-types
+        - MySQLDB@unfurl.cloud/onecommons/std:generic_types
         artifacts:
         - docker.io/gogs/gogs
   unfurl.cloud/onecommons/blueprints/kubernetes-chores:
@@ -395,19 +402,20 @@ repositories:
     internal_id: '236'
     project_url: https://unfurl.cloud/onecommons/blueprints/kubernetes-chores
     metadata:
+      description: A collection of admin chores for your Kubernetes cluster.
       issues_url: https://unfurl.cloud/onecommons/blueprints/kubernetes-chores/-/issues
       homepage_url: https://unfurl.cloud/onecommons/blueprints/kubernetes-chores
     default_branch: main
     branches:
-      main: 00b5932f0ebabb6c07550d90a7f5bc2725aaf7f4
+      main: bdec2319f76f218f61eaaa963d659ad595f32f1a
     tags:
-      v0.1.0: e337e97dc7d76c0ee48d15fc265bb2e97d9313ba
+      v1.0.0: bdec2319f76f218f61eaaa963d659ad595f32f1a
+      v0.1.0: 00b5932f0ebabb6c07550d90a7f5bc2725aaf7f4
     notable:
       ensemble-template.yaml#spec/service_template:
         artifact_type: artifact.tosca.ServiceTemplate
         name: Kubernetes Admin Chores
         version: 0.1
-        schema: https://unfurl.cloud/onecommons/unfurl-types
         type:
           name: GKEClusterAdmin@unfurl.cloud/onecommons/blueprints/kubernetes-chores
           title: GKEClusterAdmin
@@ -429,7 +437,6 @@ repositories:
   unfurl.cloud/onecommons/blueprints/magento:
     git: unfurl.cloud/onecommons/blueprints/magento.git
     path: onecommons/blueprints/magento
-    initial_revision: b4306ad8e798f2a70ea954da17f9671405968407
     name: Magento
     protocols:
     - https
@@ -447,7 +454,8 @@ repositories:
     branches:
       main: bf4c231a85bf3b014904fa1b8a7af84a3e8b8747
     tags:
-      v0.1.0: aaa67daf89b5036a2432375d9ad5c65ea5be2313
+      v1.0.0: ec59fed01f65dc4c181f66982d23783af04540f8
+      v0.1.0: 882bc0c3307fa173ee9cbd217f54bb9ca85e2dc3
     notable:
       ensemble-template.yaml#spec/service_template:
         artifact_type: artifact.tosca.ServiceTemplate
@@ -486,29 +494,30 @@ repositories:
       avatar_url: https://unfurl.cloud/onecommons/blueprints/mattermost-entreprise-edition-e0/-/avatar
     default_branch: main
     branches:
-      main: d9727a5fec198bcfa7ef274fc47a22f3bfb48221
+      main: a981dae2678978fc14171158652e152af5055dc7
     tags:
-      v0.1.0: 3758104ba167a1c60ebab7c975e196a98b595a54
+      v1.0.0: a981dae2678978fc14171158652e152af5055dc7
+      v0.1.0: d9727a5fec198bcfa7ef274fc47a22f3bfb48221
     notable:
       ensemble-template.yaml#spec/service_template:
         artifact_type: artifact.tosca.ServiceTemplate
         name: Mattermost Entreprise Edition E0
         version: '0.1'
         description: Mattermost Team Edition open source collaboration/chat software
-        schema: https://unfurl.cloud/onecommons/unfurl-types.git
         type:
           name: MattermostEntrepriseEditionE0App@unfurl.cloud/onecommons/blueprints/mattermost-entreprise-edition-e0
           title: MattermostEntrepriseEditionE0App
           extends:
           - MattermostEntrepriseEditionE0App@unfurl.cloud/onecommons/blueprints/mattermost-entreprise-edition-e0
-          - unfurl.nodes.WebApp@unfurl.cloud/onecommons/unfurl-types
-          - unfurl.nodes.ContainerApp@unfurl.cloud/onecommons/unfurl-types
-          - unfurl.nodes.App@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.WebApp@unfurl.cloud/onecommons/std:generic_types
+          - WebApp@unfurl.cloud/onecommons/std:generic_types
+          - _ContainerAppBase@unfurl.cloud/onecommons/std:generic_types
+          - App@unfurl.cloud/onecommons/std:generic_types
           - tosca.nodes.Root
           - tosca.capabilities.Node
           - tosca.capabilities.Root
         dependencies:
-        - PostgresDB@unfurl.cloud/onecommons/unfurl-types
+        - PostgresDB@unfurl.cloud/onecommons/std:generic_types
         artifacts:
         - docker.io/mattermost/mattermost-enterprise-edition
   unfurl.cloud/onecommons/blueprints/mediawiki:
@@ -528,9 +537,10 @@ repositories:
       avatar_url: https://unfurl.cloud/uploads/-/system/project/avatar/35/avatar.png
     default_branch: main
     branches:
-      main: 225932bc2a45473d682e48f272bc48fcd83909bb
+      main: 0fc60cb3afd06ae2c4abe038007e9ff4db398662
     tags:
-      v0.1.0: 408ae65c06039edb2f302fe1f96e452f558a3648
+      v1.0.0: 0fc60cb3afd06ae2c4abe038007e9ff4db398662
+      v0.1.0: 225932bc2a45473d682e48f272bc48fcd83909bb
     notable:
       ensemble-template.yaml#spec/service_template:
         artifact_type: artifact.tosca.ServiceTemplate
@@ -538,21 +548,21 @@ repositories:
         version: 0.1
         description: MediaWiki is free and open-source wiki software used in Wikipedia,
           Wiktionary, and many other online encyclopedias.
-        schema: https://unfurl.cloud/onecommons/unfurl-types
         type:
           name: Mediawiki@unfurl.cloud/onecommons/blueprints/mediawiki
           title: Mediawiki
           extends:
           - Mediawiki@unfurl.cloud/onecommons/blueprints/mediawiki
-          - unfurl.nodes.SQLWebApp@unfurl.cloud/onecommons/unfurl-types
-          - unfurl.nodes.WebApp@unfurl.cloud/onecommons/unfurl-types
-          - unfurl.nodes.ContainerApp@unfurl.cloud/onecommons/unfurl-types
-          - unfurl.nodes.App@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.SQLWebApp@unfurl.cloud/onecommons/std:generic_types
+          - SQLWebApp@unfurl.cloud/onecommons/std:generic_types
+          - WebApp@unfurl.cloud/onecommons/std:generic_types
+          - _ContainerAppBase@unfurl.cloud/onecommons/std:generic_types
+          - App@unfurl.cloud/onecommons/std:generic_types
           - tosca.nodes.Root
           - tosca.capabilities.Node
           - tosca.capabilities.Root
         dependencies:
-        - MySQLDB@unfurl.cloud/onecommons/unfurl-types
+        - MySQLDB@unfurl.cloud/onecommons/std:generic_types
         artifacts:
         - docker.io/bitnami/mediawiki
   unfurl.cloud/onecommons/blueprints/memos:
@@ -572,9 +582,10 @@ repositories:
       avatar_url: https://unfurl.cloud/onecommons/blueprints/memos/-/avatar
     default_branch: main
     branches:
-      main: e01875f486a3a2c14c9e728069ea166716ec46f2
+      main: 7b4f68273f864f533ac34cce2e20e6cf8af6e30d
     tags:
-      v0.1.0: 0c969a0de27a660f997ed2752a3b91295a4574e3
+      v1.0.0: 7b4f68273f864f533ac34cce2e20e6cf8af6e30d
+      v0.1.0: e01875f486a3a2c14c9e728069ea166716ec46f2
     notable:
       ensemble-template.yaml#spec/service_template:
         artifact_type: artifact.tosca.ServiceTemplate
@@ -582,15 +593,15 @@ repositories:
         version: '0.1'
         description: An open-source, self-hosted memo hub with knowledge management
           and socialization.
-        schema: https://unfurl.cloud/onecommons/unfurl-types.git
         type:
           name: MemosApp@unfurl.cloud/onecommons/blueprints/memos
           title: MemosApp
           extends:
           - MemosApp@unfurl.cloud/onecommons/blueprints/memos
-          - unfurl.nodes.WebApp@unfurl.cloud/onecommons/unfurl-types
-          - unfurl.nodes.ContainerApp@unfurl.cloud/onecommons/unfurl-types
-          - unfurl.nodes.App@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.WebApp@unfurl.cloud/onecommons/std:generic_types
+          - WebApp@unfurl.cloud/onecommons/std:generic_types
+          - _ContainerAppBase@unfurl.cloud/onecommons/std:generic_types
+          - App@unfurl.cloud/onecommons/std:generic_types
           - tosca.nodes.Root
           - tosca.capabilities.Node
           - tosca.capabilities.Root
@@ -613,9 +624,10 @@ repositories:
       avatar_url: https://unfurl.cloud/uploads/-/system/project/avatar/32/avatar.png
     default_branch: main
     branches:
-      main: f1ef6dcd27822413b958c0231fb9c1089909f69f
+      main: 0d02cf5bb68d3828d687b0be7ec3ef64f715b957
     tags:
-      v0.1.0: f8bde25a7626ca1b023f6240e2821857dae6c6f3
+      v1.0.0: 0d02cf5bb68d3828d687b0be7ec3ef64f715b957
+      v0.1.0: f1ef6dcd27822413b958c0231fb9c1089909f69f
     notable:
       ensemble-template.yaml#spec/service_template:
         artifact_type: artifact.tosca.ServiceTemplate
@@ -623,14 +635,15 @@ repositories:
         version: 0.1
         description: A Minecraft Server that will automatically download the latest
           stable version at startup.
-        schema: https://unfurl.cloud/onecommons/unfurl-types
         type:
           name: Minecraft@unfurl.cloud/onecommons/blueprints/minecraft
           title: Minecraft
           extends:
           - Minecraft@unfurl.cloud/onecommons/blueprints/minecraft
-          - unfurl.nodes.ContainerApp@unfurl.cloud/onecommons/unfurl-types
-          - unfurl.nodes.App@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.ContainerApp@unfurl.cloud/onecommons/std:generic_types
+          - ContainerApp@unfurl.cloud/onecommons/std:generic_types
+          - _ContainerAppBase@unfurl.cloud/onecommons/std:generic_types
+          - App@unfurl.cloud/onecommons/std:generic_types
           - tosca.nodes.Root
           - tosca.capabilities.Node
           - tosca.capabilities.Root
@@ -639,7 +652,6 @@ repositories:
   unfurl.cloud/onecommons/blueprints/mod9:
     git: unfurl.cloud/onecommons/blueprints/mod9.git
     path: onecommons/blueprints/mod9
-    initial_revision: 8bc6430445fa38893b51c5e4a4df29177df58cdf
     name: Mod9 ASR Engine
     protocols:
     - https
@@ -705,9 +717,10 @@ repositories:
     default_branch: main
     branches:
       dsl: 21d93f78fd9f06bb21e120071632c75b3f62ebc3
-      main: 951d9ef755483ee63be036501a0377bf82fdbc36
+      main: cf34ceb31eb4a4ab801d276582dd3e1e48637cf7
     tags:
-      v0.1.0: 8d9110c500a4f89eb3ec39029ce3c8afdde08239
+      v1.0.0: cf34ceb31eb4a4ab801d276582dd3e1e48637cf7
+      v0.1.0: 951d9ef755483ee63be036501a0377bf82fdbc36
     notable:
       ensemble-template.yaml#spec/service_template:
         artifact_type: artifact.tosca.ServiceTemplate
@@ -715,15 +728,15 @@ repositories:
         version: 0.1
         description: A safe home for all your data. Access & share your files, calendars,
           contacts, mail & more from any device, on your terms.
-        schema: https://unfurl.cloud/onecommons/unfurl-types
         type:
           name: Nextcloud@unfurl.cloud/onecommons/blueprints/nextcloud
           title: Nextcloud
           extends:
           - Nextcloud@unfurl.cloud/onecommons/blueprints/nextcloud
-          - unfurl.nodes.WebApp@unfurl.cloud/onecommons/unfurl-types
-          - unfurl.nodes.ContainerApp@unfurl.cloud/onecommons/unfurl-types
-          - unfurl.nodes.App@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.WebApp@unfurl.cloud/onecommons/std:generic_types
+          - WebApp@unfurl.cloud/onecommons/std:generic_types
+          - _ContainerAppBase@unfurl.cloud/onecommons/std:generic_types
+          - App@unfurl.cloud/onecommons/std:generic_types
           - tosca.nodes.Root
           - tosca.capabilities.Node
           - tosca.capabilities.Root
@@ -748,38 +761,39 @@ repositories:
       avatar_url: https://unfurl.cloud/uploads/-/system/project/avatar/44/nginx-avatar.png
     default_branch: main
     branches:
-      main: 08f3193f04c2e4ac3979cddf001f132ecab1389a
+      main: 4bf4e69e306efbf4b21412fa49e9a171b356ea22
     tags:
-      v0.1.0: ba31d60ede1529965bc0e851e980c271761cedf4
+      v1.0.0: 4bf4e69e306efbf4b21412fa49e9a171b356ea22
+      v0.1.0: 08f3193f04c2e4ac3979cddf001f132ecab1389a
     notable:
       ensemble-template.yaml#spec/service_template:
         artifact_type: artifact.tosca.ServiceTemplate
         name: NGINX
         version: 0.1
-        schema: https://unfurl.cloud/onecommons/unfurl-types
         type:
           name: NGINX@unfurl.cloud/onecommons/blueprints/nginx
           title: NGINX
           extends:
           - NGINX@unfurl.cloud/onecommons/blueprints/nginx
-          - unfurl.nodes.DockerComputeHost@unfurl.cloud/onecommons/unfurl-types
-          - unfurl.nodes.ContainerComputeHost@unfurl.cloud/onecommons/unfurl-types
-          - unfurl.nodes.DockerHost@unfurl.cloud/onecommons/unfurl-types
-          - unfurl.nodes.ServiceHost@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.DockerComputeHost@unfurl.cloud/onecommons/std:generic_types
+          - DockerComputeHost@unfurl.cloud/onecommons/std:generic_types
+          - ContainerComputeHost@unfurl.cloud/onecommons/std:generic_types
+          - ContainerHost@unfurl.cloud/onecommons/std:generic_types
+          - ServiceHost@unfurl.cloud/onecommons/std:generic_types
           - tosca.nodes.Root
           - tosca.capabilities.Node
           - tosca.capabilities.Root
           implementations:
           - configure
-          - create
+          implementation_requirements:
+          - unfurl.relationships.ConnectsTo.ComputeMachines
         dependencies:
-        - unfurl.nodes.Compute
+        - Compute@unfurl.cloud/onecommons/std:generic_types
         artifacts:
         - docker.io/bitnami/nginx
   unfurl.cloud/onecommons/blueprints/odoo:
     git: unfurl.cloud/onecommons/blueprints/odoo.git
     path: onecommons/blueprints/odoo
-    initial_revision: e4140b1f72ff26a1a5049a529c13ecbb1a32214d
     name: Odoo
     protocols:
     - https
@@ -798,7 +812,8 @@ repositories:
     branches:
       main: ce8f368b18f111c3afec3d5e3ceb40a2bb02095d
     tags:
-      v0.1.0: 84d86d3f2202f8def6dbb106cbf05e16c3692c97
+      v1.0.0: 2e57b3251bd9f8e292385b9f31774f6408abc4d7
+      v0.1.0: be0da659d7358bc4d24d988f436a5508e098b252
     notable:
       ensemble-template.yaml#spec/service_template:
         artifact_type: artifact.tosca.ServiceTemplate
@@ -836,9 +851,10 @@ repositories:
       avatar_url: https://unfurl.cloud/onecommons/blueprints/openvscode-server/-/avatar
     default_branch: main
     branches:
-      main: a8a1d881bae004f42afc518ae88fa72bcd1174ac
+      main: ccc222103d8f0b6a913a585e3afe521be0612817
     tags:
-      v0.1.0: 75c337211eb745504e912b07969df762968f33d6
+      v1.0.0: ccc222103d8f0b6a913a585e3afe521be0612817
+      v0.1.0: a8a1d881bae004f42afc518ae88fa72bcd1174ac
     notable:
       ensemble-template.yaml#spec/service_template:
         artifact_type: artifact.tosca.ServiceTemplate
@@ -846,15 +862,15 @@ repositories:
         version: '0.1'
         description: A version of VS Code that runs a server on a remote machine and
           allows access through a modern web browser.
-        schema: https://unfurl.cloud/onecommons/unfurl-types.git
         type:
           name: OpenvscodeServerApp@unfurl.cloud/onecommons/blueprints/openvscode-server
           title: OpenvscodeServerApp
           extends:
           - OpenvscodeServerApp@unfurl.cloud/onecommons/blueprints/openvscode-server
-          - unfurl.nodes.WebApp@unfurl.cloud/onecommons/unfurl-types
-          - unfurl.nodes.ContainerApp@unfurl.cloud/onecommons/unfurl-types
-          - unfurl.nodes.App@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.WebApp@unfurl.cloud/onecommons/std:generic_types
+          - WebApp@unfurl.cloud/onecommons/std:generic_types
+          - _ContainerAppBase@unfurl.cloud/onecommons/std:generic_types
+          - App@unfurl.cloud/onecommons/std:generic_types
           - tosca.nodes.Root
           - tosca.capabilities.Node
           - tosca.capabilities.Root
@@ -874,28 +890,29 @@ repositories:
       homepage_url: https://unfurl.cloud/onecommons/blueprints/unfurl-server
     default_branch: main
     branches:
-      main: 846da315e6d36748a141bf13cba1fe6068b02fc3
+      main: 7b336130bac344db934a4bb1e147af27ae37e27e
     tags:
-      v0.1.0: c0042b73310309781b5886b722c0dd936a4c631a
+      v1.0.0: 7b336130bac344db934a4bb1e147af27ae37e27e
+      v0.1.0: 846da315e6d36748a141bf13cba1fe6068b02fc3
     notable:
       ensemble-template.yaml#spec/service_template:
         artifact_type: artifact.tosca.ServiceTemplate
         name: Unfurl Server Service
         description: unfurl as a service
-        schema: https://unfurl.cloud/onecommons/unfurl-types.git
         type:
           name: UnfurlServerApp@unfurl.cloud/onecommons/blueprints/unfurl-server
           title: UnfurlServerApp
           extends:
           - UnfurlServerApp@unfurl.cloud/onecommons/blueprints/unfurl-server
-          - unfurl.nodes.APIServiceApp@unfurl.cloud/onecommons/unfurl-types
-          - unfurl.nodes.ContainerApp@unfurl.cloud/onecommons/unfurl-types
-          - unfurl.nodes.App@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.APIServiceApp@unfurl.cloud/onecommons/std:generic_types
+          - APIServiceApp@unfurl.cloud/onecommons/std:generic_types
+          - _ContainerAppBase@unfurl.cloud/onecommons/std:generic_types
+          - App@unfurl.cloud/onecommons/std:generic_types
           - tosca.nodes.Root
           - tosca.capabilities.Node
           - tosca.capabilities.Root
         dependencies:
-        - Redis@unfurl.cloud/onecommons/unfurl-types
+        - Redis@unfurl.cloud/onecommons/std:generic_types
         artifacts:
         - docker.io/{{ root.app.unfurl_container_image }}
   unfurl.cloud/onecommons/blueprints/wireguard:
@@ -945,7 +962,6 @@ repositories:
   unfurl.cloud/onecommons/blueprints/wordpress:
     git: unfurl.cloud/onecommons/blueprints/wordpress.git
     path: onecommons/blueprints/wordpress
-    initial_revision: 6993d63c774a70f72a7ea9bf987451bc8a685b7d
     name: WordPress
     protocols:
     - https
@@ -963,9 +979,10 @@ repositories:
     default_branch: main
     branches:
       jg-changes: ecae7112fbb6fc1b9902b1116081a0a4aeeea5ab
-      main: 24ef05c80a41b888018a5f279e9705c2dfa4956e
+      main: 853cc4536d15a0c0949d2d555636a48c0b8960ef
     tags:
-      v0.1.0: 29454201d7fe16f561eea6a2d0cc01f384ae798a
+      v1.0.0: 853cc4536d15a0c0949d2d555636a48c0b8960ef
+      v0.1.0: 24ef05c80a41b888018a5f279e9705c2dfa4956e
     notable:
       ensemble-template.yaml#spec/service_template:
         artifact_type: artifact.tosca.ServiceTemplate
@@ -973,21 +990,21 @@ repositories:
         version: 0.1
         description: WordPress is an powerful open-source website creation tool written
           in PHP and makes setting up a blog or website extremely simple.
-        schema: https://unfurl.cloud/onecommons/unfurl-types
         type:
           name: WordPress@unfurl.cloud/onecommons/blueprints/wordpress
           title: WordPress
           extends:
           - WordPress@unfurl.cloud/onecommons/blueprints/wordpress
-          - unfurl.nodes.SQLWebApp@unfurl.cloud/onecommons/unfurl-types
-          - unfurl.nodes.WebApp@unfurl.cloud/onecommons/unfurl-types
-          - unfurl.nodes.ContainerApp@unfurl.cloud/onecommons/unfurl-types
-          - unfurl.nodes.App@unfurl.cloud/onecommons/unfurl-types
+          - unfurl.nodes.SQLWebApp@unfurl.cloud/onecommons/std:generic_types
+          - SQLWebApp@unfurl.cloud/onecommons/std:generic_types
+          - WebApp@unfurl.cloud/onecommons/std:generic_types
+          - _ContainerAppBase@unfurl.cloud/onecommons/std:generic_types
+          - App@unfurl.cloud/onecommons/std:generic_types
           - tosca.nodes.Root
           - tosca.capabilities.Node
           - tosca.capabilities.Root
         dependencies:
-        - MySQLDB@unfurl.cloud/onecommons/unfurl-types
+        - MySQLDB@unfurl.cloud/onecommons/std:generic_types
         artifacts:
         - docker.io/bitnami/wordpress
   unfurl.cloud/onecommons/blueprints/zulip:
@@ -1008,9 +1025,10 @@ repositories:
       avatar_url: https://unfurl.cloud/uploads/-/system/project/avatar/94/avatar.png
     default_branch: main
     branches:
-      main: da23169871c21456cb974a4f29a12dd5eab792cc
+      main: 4238d040ca596c8066f1340c55711176f303e31a
     tags:
-      v0.1.0: d7b1207bf3887276ec64fbf2bd8a1039490521a0
+      v1.0.0: 4238d040ca596c8066f1340c55711176f303e31a
+      v0.1.0: da23169871c21456cb974a4f29a12dd5eab792cc
     notable:
       ensemble-template.yaml#spec/service_template:
         artifact_type: artifact.tosca.ServiceTemplate
